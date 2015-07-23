@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Printers</key>
+	<dict>
+		<key>CSE</key>
+		<array>
+			<dict>
+				<key>location</key>
+				<string>Baker Systems 310</string>
+				<key>type</key>
+				<string>Black Laser</string>
+				<key>name</key>
+				<string>lj_se_310_b</string>
+			</dict>
+            <dict>
+                <key>location</key>
+                <string>Bolz Hall 117</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>lj_bo_118_a</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Caldwell Labs 112</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>lj_cl_112_a</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Caldwell Labs 112</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>lj_cl_112_b</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Caldwell Labs 112</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>lj_cl_112_c</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Caldwell Labs 413</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>lj_cl_413_a</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Dreese Labs 172</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>lj_dl_172_a</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Dreese Labs 272</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>lj_dl_272_a</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Dreese Labs 395Q</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>lj_dl_395_a</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Dreese Labs 395Q</string>
+                <key>type</key>
+                <string>Color Laser</string>
+                <key>name</key>
+                <string>ljc_dl_395_d</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Dreese Labs 477</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>lj_dl_477_b</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Dreese Labs 577</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>lj_dl_577_a</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Dreese Labs 677</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>lj_dl_677_b</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Dreese Labs 677</string>
+                <key>type</key>
+                <string>Color Laser</string>
+                <key>name</key>
+                <string>ljc_dl_677</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Dreese Labs 777</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>lj_dl_777_a</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Dreese Labs 895</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>lj_dl_894_a</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Dreese Labs 895</string>
+                <key>type</key>
+                <string>Color Laser</string>
+                <key>name</key>
+                <string>ljc_dl_894</string>
+            </dict>
+		</array>
+		<key>ECE</key>
+		<array>
+            <dict>
+                <key>location</key>
+                <string>Caldwell Labs 260</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>CL260F</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Dreese Labs 517</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>DL517F</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Dreese Labs 557</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>DL557F</string>
+            </dict>
+            <dict>
+                <key>location</key>
+                <string>Dreese Labs 817</string>
+                <key>type</key>
+                <string>Black Laser</string>
+                <key>name</key>
+                <string>DL817F</string>
+            </dict>
+        </array>
+	</dict>
+</dict>
+</plist>

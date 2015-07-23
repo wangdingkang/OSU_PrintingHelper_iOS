@@ -1,0 +1,13 @@
+PODS:
+  - CRToast (0.0.7)
+  - NMSSH (2.2.1)
+
+DEPENDENCIES:
+  - CRToast
+  - NMSSH (~> 2.2)
+
+SPEC CHECKSUMS:
+  CRToast: 99a28f4387def43b439ad88f957ce31357ff7373
+  NMSSH: a5f341a96e8fa5b27f805309276ae2bce12bffe0
+
+COCOAPODS: 0.38.0.beta.2

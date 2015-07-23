@@ -7,13 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20C78728DD1997AF6E8F35CD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FCC48DD718320F566005B0 /* libPods.a */; };
 		5E01BC761B543E1600F5A230 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01BC751B543E1600F5A230 /* AppDelegate.swift */; };
-		5E01BC781B543E1600F5A230 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01BC771B543E1600F5A230 /* FirstViewController.swift */; };
-		5E01BC7A1B543E1600F5A230 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01BC791B543E1600F5A230 /* SecondViewController.swift */; };
 		5E01BC7D1B543E1600F5A230 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E01BC7B1B543E1600F5A230 /* Main.storyboard */; };
 		5E01BC7F1B543E1600F5A230 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E01BC7E1B543E1600F5A230 /* Images.xcassets */; };
 		5E01BC821B543E1600F5A230 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E01BC801B543E1600F5A230 /* LaunchScreen.xib */; };
 		5E01BC8E1B543E1600F5A230 /* OSU_PrinterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01BC8D1B543E1600F5A230 /* OSU_PrinterTests.swift */; };
+		5E01BC9A1B544D2900F5A230 /* FilesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01BC991B544D2900F5A230 /* FilesTableViewController.swift */; };
+		5E01BC9C1B544D5D00F5A230 /* AccountsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01BC9B1B544D5D00F5A230 /* AccountsTableViewController.swift */; };
+		5E01BC9E1B54B38300F5A230 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01BC9D1B54B38300F5A230 /* HistoryTableViewController.swift */; };
+		5E01BCA01B54B3DE00F5A230 /* PrintingSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01BC9F1B54B3DE00F5A230 /* PrintingSettingsTableViewController.swift */; };
+		5E01BCA71B557E5B00F5A230 /* OSUPrinterDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E01BCA51B557E5B00F5A230 /* OSUPrinterDataModel.xcdatamodeld */; };
+		5E01BCA91B55892C00F5A230 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01BCA81B55892C00F5A230 /* DatabaseHelper.swift */; };
+		5E01BCAF1B558BC900F5A230 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01BCAE1B558BC900F5A230 /* Enums.swift */; };
+		5E01BCB51B55912600F5A230 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01BCB41B55912600F5A230 /* Account.swift */; };
+		5E250A4F1B56064C00FC9F90 /* AccountManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E250A4E1B56064C00FC9F90 /* AccountManagementViewController.swift */; };
+		5E3AA7F01B5E0E2C00D08D01 /* MyActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AA7EF1B5E0E2C00D08D01 /* MyActivityIndicatorView.swift */; };
+		5E3AA7F41B5EE30600D08D01 /* PrintingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AA7F31B5EE30600D08D01 /* PrintingHistory.swift */; };
+		5E3AA7F81B5F0F2F00D08D01 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AA7F71B5F0F2F00D08D01 /* HistoryTableViewCell.swift */; };
+		5E68A8841B5ACD830096B04C /* DocumentFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E68A8831B5ACD830096B04C /* DocumentFile.swift */; };
+		5E68A8861B5AD93E0096B04C /* FilesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E68A8851B5AD93E0096B04C /* FilesTableViewCell.swift */; };
+		5E68A8881B5B34200096B04C /* Resource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E68A8871B5B34200096B04C /* Resource.plist */; };
+		5E68A88A1B5B41FD0096B04C /* LocalFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E68A8891B5B41FD0096B04C /* LocalFileHelper.swift */; };
+		5E68A88C1B5B48090096B04C /* PrinterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E68A88B1B5B48090096B04C /* PrinterInfo.swift */; };
+		5E68A8911B5C63770096B04C /* SendDataBackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E68A8901B5C63770096B04C /* SendDataBackProtocol.swift */; };
+		5E68A8931B5C80A80096B04C /* TempUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E68A8921B5C80A80096B04C /* TempUser.swift */; };
+		5ED055B71B604976008A34C1 /* TransitionObjectForTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED055B61B604976008A34C1 /* TransitionObjectForTabBar.swift */; };
+		5ED055BB1B607302008A34C1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED055BA1B607302008A34C1 /* AboutViewController.swift */; };
+		5ED055BD1B607974008A34C1 /* TaskFinishedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED055BC1B607974008A34C1 /* TaskFinishedProtocol.swift */; };
+		5ED055BF1B607CF2008A34C1 /* PrintingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED055BE1B607CF2008A34C1 /* PrintingOption.swift */; };
+		5EE231BF1B5747BF00236AE2 /* InternetConnectionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE231BE1B5747BF00236AE2 /* InternetConnectionUtility.swift */; };
+		5EE231C31B574C5400236AE2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE231C21B574C5400236AE2 /* Reachability.m */; };
+		5EE231C51B5757C900236AE2 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE231C41B5757C900236AE2 /* RootTabBarController.swift */; };
+		5EE231C71B57FDE500236AE2 /* SSHHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE231C61B57FDE500236AE2 /* SSHHelper.swift */; };
+		5EE231C91B58A81600236AE2 /* FileSystemHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE231C81B58A81500236AE2 /* FileSystemHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +54,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18FCC48DD718320F566005B0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E01BC701B543E1600F5A230 /* OSU Printer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSU Printer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E01BC741B543E1600F5A230 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E01BC751B543E1600F5A230 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5E01BC771B543E1600F5A230 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		5E01BC791B543E1600F5A230 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		5E01BC7C1B543E1600F5A230 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E01BC7E1B543E1600F5A230 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5E01BC811B543E1600F5A230 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5E01BC871B543E1600F5A230 /* OSU PrinterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OSU PrinterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E01BC8C1B543E1600F5A230 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E01BC8D1B543E1600F5A230 /* OSU_PrinterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSU_PrinterTests.swift; sourceTree = "<group>"; };
+		5E01BC991B544D2900F5A230 /* FilesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesTableViewController.swift; sourceTree = "<group>"; };
+		5E01BC9B1B544D5D00F5A230 /* AccountsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewController.swift; sourceTree = "<group>"; };
+		5E01BC9D1B54B38300F5A230 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		5E01BC9F1B54B3DE00F5A230 /* PrintingSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintingSettingsTableViewController.swift; sourceTree = "<group>"; };
+		5E01BCA61B557E5B00F5A230 /* OSUPrinterDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OSUPrinterDataModel.xcdatamodel; sourceTree = "<group>"; };
+		5E01BCA81B55892C00F5A230 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseHelper.swift; path = "OSU Printer/DatabaseHelper.swift"; sourceTree = "<group>"; };
+		5E01BCAE1B558BC900F5A230 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		5E01BCB41B55912600F5A230 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		5E250A4E1B56064C00FC9F90 /* AccountManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManagementViewController.swift; sourceTree = "<group>"; };
+		5E3AA7EF1B5E0E2C00D08D01 /* MyActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityIndicatorView.swift; sourceTree = "<group>"; };
+		5E3AA7F31B5EE30600D08D01 /* PrintingHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintingHistory.swift; sourceTree = "<group>"; };
+		5E3AA7F71B5F0F2F00D08D01 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		5E68A8831B5ACD830096B04C /* DocumentFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentFile.swift; sourceTree = "<group>"; };
+		5E68A8851B5AD93E0096B04C /* FilesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesTableViewCell.swift; sourceTree = "<group>"; };
+		5E68A8871B5B34200096B04C /* Resource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Resource.plist; path = ../Resource.plist; sourceTree = "<group>"; };
+		5E68A8891B5B41FD0096B04C /* LocalFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileHelper.swift; sourceTree = "<group>"; };
+		5E68A88B1B5B48090096B04C /* PrinterInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterInfo.swift; sourceTree = "<group>"; };
+		5E68A8901B5C63770096B04C /* SendDataBackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendDataBackProtocol.swift; sourceTree = "<group>"; };
+		5E68A8921B5C80A80096B04C /* TempUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempUser.swift; sourceTree = "<group>"; };
+		5ED055B61B604976008A34C1 /* TransitionObjectForTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionObjectForTabBar.swift; sourceTree = "<group>"; };
+		5ED055BA1B607302008A34C1 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		5ED055BC1B607974008A34C1 /* TaskFinishedProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskFinishedProtocol.swift; sourceTree = "<group>"; };
+		5ED055BE1B607CF2008A34C1 /* PrintingOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintingOption.swift; sourceTree = "<group>"; };
+		5EE231BE1B5747BF00236AE2 /* InternetConnectionUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetConnectionUtility.swift; sourceTree = "<group>"; };
+		5EE231C01B574C5300236AE2 /* OSU Printer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OSU Printer-Bridging-Header.h"; sourceTree = "<group>"; };
+		5EE231C11B574C5400236AE2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		5EE231C21B574C5400236AE2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		5EE231C41B5757C900236AE2 /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		5EE231C61B57FDE500236AE2 /* SSHHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHHelper.swift; sourceTree = "<group>"; };
+		5EE231C81B58A81500236AE2 /* FileSystemHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemHelper.swift; sourceTree = "<group>"; };
+		9AF3F3D58BD85731EBA6E2B7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E713FFAFBA13BE35ACDDF973 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C78728DD1997AF6E8F35CD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,9 +120,14 @@
 		5E01BC671B543E1500F5A230 = {
 			isa = PBXGroup;
 			children = (
+				5E68A88F1B5C632F0096B04C /* Protocols */,
+				5E01BCAB1B55897D00F5A230 /* Classes */,
+				5E01BCAA1B55896B00F5A230 /* Models */,
 				5E01BC721B543E1600F5A230 /* OSU Printer */,
 				5E01BC8A1B543E1600F5A230 /* OSU PrinterTests */,
 				5E01BC711B543E1600F5A230 /* Products */,
+				D5287E346BF2551D6A342C85 /* Pods */,
+				AFB405F2A263096CE7482719 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,12 +143,16 @@
 		5E01BC721B543E1600F5A230 /* OSU Printer */ = {
 			isa = PBXGroup;
 			children = (
-				5E01BC751B543E1600F5A230 /* AppDelegate.swift */,
-				5E01BC771B543E1600F5A230 /* FirstViewController.swift */,
-				5E01BC791B543E1600F5A230 /* SecondViewController.swift */,
 				5E01BC7B1B543E1600F5A230 /* Main.storyboard */,
-				5E01BC7E1B543E1600F5A230 /* Images.xcassets */,
-				5E01BC801B543E1600F5A230 /* LaunchScreen.xib */,
+				5EE231C41B5757C900236AE2 /* RootTabBarController.swift */,
+				5E3AA7F71B5F0F2F00D08D01 /* HistoryTableViewCell.swift */,
+				5E01BC9D1B54B38300F5A230 /* HistoryTableViewController.swift */,
+				5E68A8851B5AD93E0096B04C /* FilesTableViewCell.swift */,
+				5E01BC991B544D2900F5A230 /* FilesTableViewController.swift */,
+				5E01BC9B1B544D5D00F5A230 /* AccountsTableViewController.swift */,
+				5E250A4E1B56064C00FC9F90 /* AccountManagementViewController.swift */,
+				5ED055BA1B607302008A34C1 /* AboutViewController.swift */,
+				5E01BC9F1B54B3DE00F5A230 /* PrintingSettingsTableViewController.swift */,
 				5E01BC731B543E1600F5A230 /* Supporting Files */,
 			);
 			path = "OSU Printer";
@@ -93,7 +161,15 @@
 		5E01BC731B543E1600F5A230 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5EE231C11B574C5400236AE2 /* Reachability.h */,
+				5EE231C21B574C5400236AE2 /* Reachability.m */,
+				5E01BC751B543E1600F5A230 /* AppDelegate.swift */,
+				5E01BCA51B557E5B00F5A230 /* OSUPrinterDataModel.xcdatamodeld */,
+				5E01BC801B543E1600F5A230 /* LaunchScreen.xib */,
+				5E01BC7E1B543E1600F5A230 /* Images.xcassets */,
+				5E68A8871B5B34200096B04C /* Resource.plist */,
 				5E01BC741B543E1600F5A230 /* Info.plist */,
+				5EE231C01B574C5300236AE2 /* OSU Printer-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -115,6 +191,61 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5E01BCAA1B55896B00F5A230 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5E01BCA81B55892C00F5A230 /* DatabaseHelper.swift */,
+				5E68A8891B5B41FD0096B04C /* LocalFileHelper.swift */,
+				5EE231BE1B5747BF00236AE2 /* InternetConnectionUtility.swift */,
+				5EE231C61B57FDE500236AE2 /* SSHHelper.swift */,
+				5EE231C81B58A81500236AE2 /* FileSystemHelper.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5E01BCAB1B55897D00F5A230 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5E3AA7F31B5EE30600D08D01 /* PrintingHistory.swift */,
+				5E01BCB41B55912600F5A230 /* Account.swift */,
+				5E68A8921B5C80A80096B04C /* TempUser.swift */,
+				5E01BCAE1B558BC900F5A230 /* Enums.swift */,
+				5E68A8831B5ACD830096B04C /* DocumentFile.swift */,
+				5E68A88B1B5B48090096B04C /* PrinterInfo.swift */,
+				5E3AA7EF1B5E0E2C00D08D01 /* MyActivityIndicatorView.swift */,
+				5ED055B61B604976008A34C1 /* TransitionObjectForTabBar.swift */,
+				5ED055BE1B607CF2008A34C1 /* PrintingOption.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		5E68A88F1B5C632F0096B04C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5E68A8901B5C63770096B04C /* SendDataBackProtocol.swift */,
+				5ED055BC1B607974008A34C1 /* TaskFinishedProtocol.swift */,
+			);
+			name = Protocols;
+			path = "OSU Printer";
+			sourceTree = "<group>";
+		};
+		AFB405F2A263096CE7482719 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18FCC48DD718320F566005B0 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5287E346BF2551D6A342C85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E713FFAFBA13BE35ACDDF973 /* Pods.debug.xcconfig */,
+				9AF3F3D58BD85731EBA6E2B7 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E01BC911B543E1600F5A230 /* Build configuration list for PBXNativeTarget "OSU Printer" */;
 			buildPhases = (
+				7105A481F1D2333E70B95A8A /* Check Pods Manifest.lock */,
 				5E01BC6C1B543E1500F5A230 /* Sources */,
 				5E01BC6D1B543E1500F5A230 /* Frameworks */,
 				5E01BC6E1B543E1500F5A230 /* Resources */,
+				B161168610A44DE40AAFA436 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,6 +297,7 @@
 				TargetAttributes = {
 					5E01BC6F1B543E1500F5A230 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = RQHXWRAHJ8;
 					};
 					5E01BC861B543E1600F5A230 = {
 						CreatedOnToolsVersion = 6.4;
@@ -196,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E01BC7D1B543E1600F5A230 /* Main.storyboard in Resources */,
+				5E68A8881B5B34200096B04C /* Resource.plist in Resources */,
 				5E01BC821B543E1600F5A230 /* LaunchScreen.xib in Resources */,
 				5E01BC7F1B543E1600F5A230 /* Images.xcassets in Resources */,
 			);
@@ -210,14 +345,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7105A481F1D2333E70B95A8A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B161168610A44DE40AAFA436 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5E01BC6C1B543E1500F5A230 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E01BC7A1B543E1600F5A230 /* SecondViewController.swift in Sources */,
+				5E68A8841B5ACD830096B04C /* DocumentFile.swift in Sources */,
+				5EE231C31B574C5400236AE2 /* Reachability.m in Sources */,
+				5EE231C51B5757C900236AE2 /* RootTabBarController.swift in Sources */,
+				5E68A88A1B5B41FD0096B04C /* LocalFileHelper.swift in Sources */,
+				5E3AA7F81B5F0F2F00D08D01 /* HistoryTableViewCell.swift in Sources */,
+				5E01BC9E1B54B38300F5A230 /* HistoryTableViewController.swift in Sources */,
+				5E3AA7F41B5EE30600D08D01 /* PrintingHistory.swift in Sources */,
+				5E01BCB51B55912600F5A230 /* Account.swift in Sources */,
+				5E01BC9A1B544D2900F5A230 /* FilesTableViewController.swift in Sources */,
+				5EE231C71B57FDE500236AE2 /* SSHHelper.swift in Sources */,
+				5ED055BD1B607974008A34C1 /* TaskFinishedProtocol.swift in Sources */,
+				5E68A8911B5C63770096B04C /* SendDataBackProtocol.swift in Sources */,
+				5E68A88C1B5B48090096B04C /* PrinterInfo.swift in Sources */,
+				5EE231C91B58A81600236AE2 /* FileSystemHelper.swift in Sources */,
+				5E01BC9C1B544D5D00F5A230 /* AccountsTableViewController.swift in Sources */,
+				5ED055BF1B607CF2008A34C1 /* PrintingOption.swift in Sources */,
+				5E01BCA71B557E5B00F5A230 /* OSUPrinterDataModel.xcdatamodeld in Sources */,
+				5E01BCA91B55892C00F5A230 /* DatabaseHelper.swift in Sources */,
+				5E01BCAF1B558BC900F5A230 /* Enums.swift in Sources */,
+				5E68A8931B5C80A80096B04C /* TempUser.swift in Sources */,
+				5EE231BF1B5747BF00236AE2 /* InternetConnectionUtility.swift in Sources */,
+				5E3AA7F01B5E0E2C00D08D01 /* MyActivityIndicatorView.swift in Sources */,
 				5E01BC761B543E1600F5A230 /* AppDelegate.swift in Sources */,
-				5E01BC781B543E1600F5A230 /* FirstViewController.swift in Sources */,
+				5E68A8861B5AD93E0096B04C /* FilesTableViewCell.swift in Sources */,
+				5E250A4F1B56064C00FC9F90 /* AccountManagementViewController.swift in Sources */,
+				5ED055B71B604976008A34C1 /* TransitionObjectForTabBar.swift in Sources */,
+				5ED055BB1B607302008A34C1 /* AboutViewController.swift in Sources */,
+				5E01BCA01B54B3DE00F5A230 /* PrintingSettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,21 +537,34 @@
 		};
 		5E01BC921B543E1600F5A230 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E713FFAFBA13BE35ACDDF973 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "OSU Printer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "OSU Printer/OSU Printer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		5E01BC931B543E1600F5A230 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AF3F3D58BD85731EBA6E2B7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "OSU Printer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "OSU Printer/OSU Printer-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -415,6 +621,7 @@
 				5E01BC931B543E1600F5A230 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E01BC941B543E1600F5A230 /* Build configuration list for PBXNativeTarget "OSU PrinterTests" */ = {
 			isa = XCConfigurationList;
@@ -423,8 +630,22 @@
 				5E01BC961B543E1600F5A230 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5E01BCA51B557E5B00F5A230 /* OSUPrinterDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5E01BCA61B557E5B00F5A230 /* OSUPrinterDataModel.xcdatamodel */,
+			);
+			currentVersion = 5E01BCA61B557E5B00F5A230 /* OSUPrinterDataModel.xcdatamodel */;
+			path = OSUPrinterDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5E01BC681B543E1500F5A230 /* Project object */;
 }
