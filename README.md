@@ -1,7 +1,7 @@
-# OSU-Printer
+# OSU_PrintingHelper
 version 1.0
 
-# Introduction
+## Introduction
 
 This is a printing application for the Ohio State University. The intention of creating this application is to help student to print their documents using department printers more efficiently. The project currently is still under construction.
 
