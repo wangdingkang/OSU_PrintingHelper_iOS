@@ -433,8 +433,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OSU Printer Version 1.0 " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXL-aB-gu9">
-                                <rect key="frame" x="16" y="258" width="568" height="84"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OSU Printer Version 1.0. Tab icons from createful/pdf-vector-icons, file icons from dreamstale, 50 file type vector icons." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXL-aB-gu9">
+                                <rect key="frame" x="16" y="237" width="568" height="126"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -443,22 +443,30 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LXL-aB-gu9" firstAttribute="leading" secondItem="T3x-Cd-ATx" secondAttribute="leadingMargin" id="2f1-85-OEI"/>
+                            <constraint firstItem="LXL-aB-gu9" firstAttribute="leading" secondItem="T3x-Cd-ATx" secondAttribute="leadingMargin" id="5OK-Rd-q0F"/>
+                            <constraint firstItem="LXL-aB-gu9" firstAttribute="trailing" secondItem="T3x-Cd-ATx" secondAttribute="trailingMargin" id="5eI-4s-VYk"/>
                             <constraint firstAttribute="centerX" secondItem="LXL-aB-gu9" secondAttribute="centerX" id="DSd-R3-tN5"/>
                             <constraint firstAttribute="centerY" secondItem="LXL-aB-gu9" secondAttribute="centerY" constant="0.5" id="MhV-ot-KI9"/>
                             <constraint firstItem="LXL-aB-gu9" firstAttribute="top" secondItem="8Xo-XA-R29" secondAttribute="bottom" constant="225" id="Oi4-EO-kzm"/>
                             <constraint firstItem="9XF-bV-Brm" firstAttribute="top" secondItem="LXL-aB-gu9" secondAttribute="bottom" constant="241" id="b4I-5R-ICe"/>
                             <constraint firstItem="LXL-aB-gu9" firstAttribute="leading" secondItem="T3x-Cd-ATx" secondAttribute="leadingMargin" id="btl-SP-boR"/>
                             <constraint firstItem="LXL-aB-gu9" firstAttribute="top" secondItem="8Xo-XA-R29" secondAttribute="bottom" constant="194" id="gRZ-rj-3Me"/>
+                            <constraint firstItem="LXL-aB-gu9" firstAttribute="top" secondItem="8Xo-XA-R29" secondAttribute="bottom" constant="173" id="gZ8-sQ-1lT"/>
+                            <constraint firstItem="LXL-aB-gu9" firstAttribute="centerY" secondItem="T3x-Cd-ATx" secondAttribute="centerY" id="jdR-5j-Ifj"/>
                             <constraint firstItem="LXL-aB-gu9" firstAttribute="trailing" secondItem="T3x-Cd-ATx" secondAttribute="trailingMargin" id="kWk-MD-nFx"/>
                             <constraint firstItem="LXL-aB-gu9" firstAttribute="centerY" secondItem="T3x-Cd-ATx" secondAttribute="centerY" id="mHG-OV-BBN"/>
                             <constraint firstItem="LXL-aB-gu9" firstAttribute="leading" secondItem="T3x-Cd-ATx" secondAttribute="leadingMargin" id="mLe-Dt-wOW"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="2f1-85-OEI"/>
                                 <exclude reference="DSd-R3-tN5"/>
                                 <exclude reference="MhV-ot-KI9"/>
                                 <exclude reference="Oi4-EO-kzm"/>
                                 <exclude reference="btl-SP-boR"/>
+                                <exclude reference="gRZ-rj-3Me"/>
+                                <exclude reference="kWk-MD-nFx"/>
+                                <exclude reference="mHG-OV-BBN"/>
                                 <exclude reference="mLe-Dt-wOW"/>
                                 <exclude reference="b4I-5R-ICe"/>
                             </mask>

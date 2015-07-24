@@ -64,17 +64,15 @@
             <array>
                 <string>pdf</string>
             </array>
-            <key>CFBundleTypeIconFile</key>
-            <string>app.icns</string>
             <key>CFBundleTypeName</key>
-            <string>public.pdf</string>
+            <string>com.adobe.pdf</string>
             <key>CFBundleTypeRole</key>
-            <string>Editor</string>
+            <string>Viewer</string>
             <key>LSHandlerRank</key>
             <string>Alternate</string>
             <key>LSItemContentTypes</key>
             <array>
-                <string>public.pdf</string>
+                <string>com.adobe.pdf</string>
             </array>
         </dict>
         <dict>
@@ -85,7 +83,7 @@
             <key>CFBundleTypeName</key>
             <string>public.png</string>
             <key>CFBundleTypeRole</key>
-            <string>Editor</string>
+            <string>Viewer</string>
             <key>LSHandlerRank</key>
             <string>Alternate</string>
             <key>LSItemContentTypes</key>
@@ -94,74 +92,30 @@
                 <string>public.jpeg</string>
             </array>
         </dict>
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>WesTec Form File</string>
+            <key>CFBundleTypeRole</key>
+            <string>Viewer</string>
+            <key>LSHandlerRank</key>
+            <string>Alternate</string>
+            <key>LSItemContentTypes</key>
+            <array>
+                <string>com.microsoft.word.doc</string>
+            </array>
+        </dict>
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>Microsoft Word 2003 XML document</string>
+            <key>CFBundleTypeRole</key>
+            <string>Viewer</string>
+            <key>LSHandlerRank</key>
+            <string>Alternate</string>
+            <key>LSItemContentTypes</key>
+            <array>
+                <string>org.openxmlformats.wordprocessingml.document</string>
+            </array>
+        </dict>
     </array>
-	<key>UTImportedTypeDeclarations</key>
-	<array>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.data</string>
-			</array>
-			<key>UTTypeIdentifier</key>
-			<string>public.pdf</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>com.apple.ostype</key>
-				<string>PDF</string>
-				<key>public.filename-extension</key>
-				<array>
-					<string>pdf</string>
-				</array>
-				<key>public.mime-type</key>
-				<string>application/pdf</string>
-			</dict>
-		</dict>
-        <dict>
-            <key>UTTypeConformsTo</key>
-            <array>
-                <string>public.image</string>
-            </array>
-            <key>UTTypeIdentifier</key>
-            <string>public.png</string>
-            <key>UTTypeTagSpecification</key>
-            <dict>
-                <key>com.apple.ostype</key>
-                <string>PNG</string>
-                <key>public.filename-extension</key>
-                <array>
-                    <string>png</string>
-                </array>
-                <key>public.mime-type</key>
-                <string>image/png</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>UTTypeIdentifier</key>
-            <string>public.jpeg</string>
-            <key>UTTypeReferenceURL</key>
-            <string>http://www.w3.org/Graphics/JPEG/</string>
-            <key>UTTypeDescription</key>
-            <string>JPEG image</string>
-            <key>UTTypeIconFile</key>
-            <string>public.jpeg.icns</string>
-            <key>UTTypeConformsTo</key>
-            <array>
-                <string>public.image</string>
-                <string>public.data</string>
-            </array>
-            <key>UTTypeTagSpecification</key>
-            <dict>
-                <key>com.apple.ostype</key>
-                <string>JPEG</string>
-                <key>public.filename-extension</key>
-                <array>
-                    <string>jpeg</string>
-                    <string>jpg</string>
-                </array>
-                <key>public.mime-type</key>
-                <string>image/jpeg</string>
-            </dict>
-        </dict>
-	</array>
 </dict>
 </plist>

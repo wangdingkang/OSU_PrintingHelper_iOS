@@ -146,7 +146,7 @@ class SSHHelper {
         
         let command = getPrintCommand(printingOption, filename: serverTempFolderPath.stringByAppendingPathComponent(filename))
         
-        tempSession.channel.execute(mkdirCommand.stringByAppendingPathComponent("\(printed++)"), error: nil, timeout: 1)
+        tempSession.channel.execute(mkdirCommand.stringByAppendingPathComponent("\(printed++)"), error: nil)
         
     }
     
