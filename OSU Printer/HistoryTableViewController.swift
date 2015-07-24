@@ -102,11 +102,10 @@ class HistoryTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let tempIdentifier = segue.identifier {
             switch tempIdentifier {
-            case "HistoryReprintIdentifier":
-                let destinationViewController = segue.destinationViewController as! PrintingSettingsTableViewController
+            case "HistoryPreviewIdentifier":
+                let destinationViewController = segue.destinationViewController as! PreviewController
                 if let selectedIndex = tableView.indexPathForCell(sender as! HistoryTableViewCell)?.row {
-                    destinationViewController.toPrintFoldername = myFileHelper.DocumentsRootPath
-                    destinationViewController.toPrintFilename = data[selectedIndex].filename
+                    destinationViewController.myFile = myFileHelper.transferFromPrintingHistoryToDocumentFile(data[selectedIndex])
                 }
             default:
                 break
@@ -114,9 +113,8 @@ class HistoryTableViewController: UITableViewController {
         }
     }
     
-    
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        if identifier != nil && identifier! == "HistoryReprintIdentifier" {
+        if identifier != nil && identifier! == "HistoryPreviewIdentifier" {
             if let selectedIndex = tableView.indexPathForCell(sender as! HistoryTableViewCell)?.row {
                 if !myFileHelper.fileExistsInRootFolder(data[selectedIndex].filename) {
                     showFileNotExistsAlert(selectedIndex)

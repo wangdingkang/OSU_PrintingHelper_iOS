@@ -22,6 +22,7 @@
 		5E01BCAF1B558BC900F5A230 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01BCAE1B558BC900F5A230 /* Enums.swift */; };
 		5E01BCB51B55912600F5A230 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01BCB41B55912600F5A230 /* Account.swift */; };
 		5E250A4F1B56064C00FC9F90 /* AccountManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E250A4E1B56064C00FC9F90 /* AccountManagementViewController.swift */; };
+		5E380CEF1B62CADE0038519D /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E380CEE1B62CADE0038519D /* PreviewController.swift */; };
 		5E3AA7F01B5E0E2C00D08D01 /* MyActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AA7EF1B5E0E2C00D08D01 /* MyActivityIndicatorView.swift */; };
 		5E3AA7F41B5EE30600D08D01 /* PrintingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AA7F31B5EE30600D08D01 /* PrintingHistory.swift */; };
 		5E3AA7F81B5F0F2F00D08D01 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AA7F71B5F0F2F00D08D01 /* HistoryTableViewCell.swift */; };
@@ -73,6 +74,7 @@
 		5E01BCAE1B558BC900F5A230 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		5E01BCB41B55912600F5A230 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		5E250A4E1B56064C00FC9F90 /* AccountManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManagementViewController.swift; sourceTree = "<group>"; };
+		5E380CEE1B62CADE0038519D /* PreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
 		5E3AA7EF1B5E0E2C00D08D01 /* MyActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityIndicatorView.swift; sourceTree = "<group>"; };
 		5E3AA7F31B5EE30600D08D01 /* PrintingHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintingHistory.swift; sourceTree = "<group>"; };
 		5E3AA7F71B5F0F2F00D08D01 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				5E01BC9B1B544D5D00F5A230 /* AccountsTableViewController.swift */,
 				5E250A4E1B56064C00FC9F90 /* AccountManagementViewController.swift */,
 				5ED055BA1B607302008A34C1 /* AboutViewController.swift */,
+				5E380CEE1B62CADE0038519D /* PreviewController.swift */,
 				5E01BC9F1B54B3DE00F5A230 /* PrintingSettingsTableViewController.swift */,
 				5E01BC731B543E1600F5A230 /* Supporting Files */,
 			);
@@ -388,6 +391,7 @@
 				5EE231C51B5757C900236AE2 /* RootTabBarController.swift in Sources */,
 				5E68A88A1B5B41FD0096B04C /* AppBundleHelper.swift in Sources */,
 				5E3AA7F81B5F0F2F00D08D01 /* HistoryTableViewCell.swift in Sources */,
+				5E380CEF1B62CADE0038519D /* PreviewController.swift in Sources */,
 				5E01BC9E1B54B38300F5A230 /* HistoryTableViewController.swift in Sources */,
 				5E3AA7F41B5EE30600D08D01 /* PrintingHistory.swift in Sources */,
 				5E01BCB51B55912600F5A230 /* Account.swift in Sources */,

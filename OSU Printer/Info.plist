@@ -78,10 +78,10 @@
         <dict>
             <key>CFBundleTypeExtensions</key>
             <array>
-                <string>myapp image</string>
+                <string>image</string>
             </array>
             <key>CFBundleTypeName</key>
-            <string>public.png</string>
+            <string>public.image</string>
             <key>CFBundleTypeRole</key>
             <string>Viewer</string>
             <key>LSHandlerRank</key>
@@ -94,7 +94,7 @@
         </dict>
         <dict>
             <key>CFBundleTypeName</key>
-            <string>WesTec Form File</string>
+            <string>public.data</string>
             <key>CFBundleTypeRole</key>
             <string>Viewer</string>
             <key>LSHandlerRank</key>
@@ -106,7 +106,7 @@
         </dict>
         <dict>
             <key>CFBundleTypeName</key>
-            <string>Microsoft Word 2003 XML document</string>
+            <string>public.composite-content</string>
             <key>CFBundleTypeRole</key>
             <string>Viewer</string>
             <key>LSHandlerRank</key>

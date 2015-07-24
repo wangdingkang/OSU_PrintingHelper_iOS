@@ -36,6 +36,12 @@ class DocumentFile {
         }
     }
     
+//    var basename: String {
+//        get {
+//            return filename.stringByDeletingPathExtension
+//        }
+//    }
+    
     var fileType: FileType {
         let ex = filename.pathExtension.lowercaseString
         switch ex {

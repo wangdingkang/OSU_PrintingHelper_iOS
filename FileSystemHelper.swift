@@ -9,7 +9,7 @@
 import Foundation
 
 /**
-    I'll rewrite this class, in order to hackle doc, docx files and images.
+    I'll rewrite this class, in order to handle doc, docx files and images, maybe make it a singleton.
     I'll probably involve multithread.
 */
 class FileSystemHelper {
@@ -72,6 +72,22 @@ class FileSystemHelper {
             return true
         } else {
             return false
+        }
+    }
+    
+    func getNSURLFromFilename(filename: String) -> NSURL? {
+        let fullPath = DocumentsRootPath.stringByAppendingPathComponent(filename)
+        return NSURL(fileURLWithPath: fullPath)
+    }
+    
+    func transferFromPrintingHistoryToDocumentFile(printingHistory: PrintingHistory) -> DocumentFile? {
+        if !fileExistsInRootFolder(printingHistory.filename) {
+            return nil
+        } else {
+            if let attributes: NSDictionary?  = fileManager.attributesOfItemAtPath(DocumentsRootPath.stringByAppendingPathComponent(printingHistory.filename), error: nil) {
+                return DocumentFile(filename: printingHistory.filename, filesize: attributes!.fileSize(), modifiedTime: attributes!.fileModificationDate())
+            }
+            return nil
         }
     }
     

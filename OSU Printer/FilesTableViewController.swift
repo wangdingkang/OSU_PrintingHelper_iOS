@@ -97,11 +97,10 @@ class FilesTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let tempIdentifier = segue.identifier {
             switch tempIdentifier {
-            case "PrintFileIdentifier":
-                let destinationViewController = segue.destinationViewController as! PrintingSettingsTableViewController
+            case "FilePreviewIdentifier":
+                let destinationViewController = segue.destinationViewController as! PreviewController
                 if let selectedIndex = tableView.indexPathForCell(sender as! FilesTableViewCell)?.row {
-                    destinationViewController.toPrintFoldername = myFileHelper.DocumentsRootPath
-                    destinationViewController.toPrintFilename = data[selectedIndex].filename
+                    destinationViewController.myFile = data[selectedIndex]
                 }
             default:
                 break

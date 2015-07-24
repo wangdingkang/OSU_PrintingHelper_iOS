@@ -44,7 +44,7 @@ class PrintingSettingsTableViewController: UITableViewController, UIPickerViewDe
     
     var toPrintFoldername: String!
     
-    var toPrintFilename: String!
+    var toPrintFile: DocumentFile!
     
     var tempUser: TempUser!
     
@@ -85,7 +85,7 @@ class PrintingSettingsTableViewController: UITableViewController, UIPickerViewDe
                 
                 () -> Void in
                 var error: String?
-                self.mySSHHelper.printPDF(self.tempUser, sourceFoldername: self.toPrintFoldername, sourceFilename: self.toPrintFilename, printingOption: PrintingOption(printerName: printerName, copies: copies, isDuplex: isDuplex), error: &error)
+                self.mySSHHelper.printFile(self.tempUser, sourceFoldername: self.toPrintFoldername, sourceFile: self.toPrintFile, printingOption: PrintingOption(printerName: printerName, copies: copies, isDuplex: isDuplex), error: &error)
                 
                 dispatch_sync(dispatch_get_main_queue()) {
                     self.progressView.stopAnimating()
@@ -95,7 +95,7 @@ class PrintingSettingsTableViewController: UITableViewController, UIPickerViewDe
                     self.showErrorWhenPrintAlert(error!)
                 }
                 else {
-                    self.myDBHelper.addAnPrintingHistory(self.toPrintFilename, printedAt: NSDate())
+                    self.myDBHelper.addAnPrintingHistory(self.toPrintFile.filename, printedAt: NSDate())
                     self.showPrintSucceedPrompt()
                 }
                 self.isPrinting = false

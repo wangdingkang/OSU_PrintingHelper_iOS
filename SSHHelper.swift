@@ -18,7 +18,7 @@ class SSHHelper {
     
     var tempUser: TempUser?
     
-    let hostnameForCSE = "beta.cse.ohio-state.edu"
+    let hostnameForCSE = "gamma.cse.ohio-state.edu"
     
     let hostnameForECE = "rh026.ece.ohio-state.edu"
     
@@ -101,7 +101,7 @@ class SSHHelper {
         let toPath = serverTempFolderPath.stringByAppendingPathComponent(filename)
         
         let uploadOK = tempFTPConnection.writeFileAtPath(foldername.stringByAppendingPathComponent(filename), toFileAtPath:
-            "\"\(serverTempFolderPath.stringByAppendingPathComponent(filename))\"")
+            "\(serverTempFolderPath.stringByAppendingPathComponent(filename))")
         
         tempFTPConnection.disconnect()
         if !uploadOK {
@@ -109,7 +109,7 @@ class SSHHelper {
         }
     }
     
-    func printPDF(newUser: TempUser, sourceFoldername: String, sourceFilename: String, printingOption: PrintingOption, inout error: String?) {
+    func printFile(newUser: TempUser, sourceFoldername: String, sourceFile: DocumentFile, printingOption: PrintingOption, inout error: String?) {
         dispatch_semaphore_wait(sshSemaphore, DISPATCH_TIME_FOREVER)
         taskFinishedDelegate.taskFinishedfeedback("Checking...")
         if !isTempSessionActive(newUser) {
@@ -127,9 +127,15 @@ class SSHHelper {
         
         if error == nil {
             taskFinishedDelegate.taskFinishedfeedback("Start uploading...")
-            createFolderAndUploadFileToServer(sourceFoldername, filename: sourceFilename, error: &error)
+            createFolderAndUploadFileToServer(sourceFoldername, filename: sourceFile.filename, error: &error)
             if error == nil {
-                commandToPrintPDF(sourceFilename, printingOption: printingOption, error: &error)
+                taskFinishedDelegate.taskFinishedfeedback("Start printing...")
+                switch sourceFile.fileType {
+                case .DOC, .DOCX :
+                    executePrintDocs(sourceFile.filename, printingOption: printingOption, error: &error)
+                default:
+                    executePrintDefault(sourceFile.filename, printingOption: printingOption, error: &error)
+                }
             }
         }
 
@@ -138,7 +144,23 @@ class SSHHelper {
     
     var printed = 0
     
-    private func commandToPrintPDF(filename: String, printingOption: PrintingOption, inout error: String?) {
+    private func executePrintDocs(filename: String, printingOption: PrintingOption, inout error: String?) {
+        if tempSession == nil || !tempSession.connected {
+            error = "Connection unexpectedly interrupted."
+            return
+        }
+        
+        let cdInCommand = "cd temp_print; "
+        let conversionCommand = "soffice --headless --convert-to pdf \"\(filename)\"; "
+        let printCommand = getPrintCommand(printingOption, filename: filename.stringByDeletingPathExtension + ".pdf") + "; "
+        let cdOutCommand = "cd ../"
+        let command = cdInCommand + conversionCommand + printCommand + cdOutCommand
+        
+        tempSession.channel.execute(cdInCommand + conversionCommand + printCommand + cdOutCommand, error: nil)
+        //print("\(command) \n")
+    }
+    
+    private func executePrintDefault(filename: String, printingOption: PrintingOption, inout error: String?) {
         if tempSession == nil || !tempSession.connected {
             error = "Connection unexpectedly interrupted."
             return
@@ -146,14 +168,13 @@ class SSHHelper {
         
         let command = getPrintCommand(printingOption, filename: serverTempFolderPath.stringByAppendingPathComponent(filename))
         
-        tempSession.channel.execute(mkdirCommand.stringByAppendingPathComponent("\(printed++)"), error: nil)
-        
+        tempSession.channel.execute(command, error: nil)
+        //print("\(command) \n")
     }
     
     func removeFileAtPath(filename: String) {
         dispatch_semaphore_wait(sshSemaphore, DISPATCH_TIME_FOREVER)
         if tempSession != nil && tempSession.connected {
-            tempSession.channel.requestPty = true
             let command = "\(removeFileCommand) \(serverTempFolderPath.stringByAppendingPathComponent(filename))"
             tempSession.channel.execute(command, error: nil)
         }

@@ -307,7 +307,7 @@
                                     <outlet property="fileDescriptionLabel" destination="Gwu-ey-tFE" id="qZ5-mT-CHn"/>
                                     <outlet property="filenameLabel" destination="SXG-sW-lxj" id="7pl-W0-Qlk"/>
                                     <outlet property="iconView" destination="3ya-zM-Wy8" id="aG6-vD-ogk"/>
-                                    <segue destination="cWn-Pr-48s" kind="show" identifier="PrintFileIdentifier" id="Imm-tu-tAf"/>
+                                    <segue destination="9vy-Q3-24W" kind="show" identifier="FilePreviewIdentifier" id="1Cb-Lq-oLf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -395,7 +395,7 @@
                                     <outlet property="descriptionLabel" destination="NYI-vk-TMm" id="3os-VW-FVp"/>
                                     <outlet property="filenameLabel" destination="OfH-IW-LU9" id="Ljq-Id-8u5"/>
                                     <outlet property="iconView" destination="Iz5-GI-usN" id="QVB-gD-mWH"/>
-                                    <segue destination="cWn-Pr-48s" kind="show" identifier="HistoryReprintIdentifier" id="ewj-2T-jDV"/>
+                                    <segue destination="9vy-Q3-24W" kind="show" identifier="HistoryPreviewIdentifier" id="iv4-ha-mIn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -420,6 +420,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yrk-jb-BCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-646" y="1332"/>
+        </scene>
+        <!--Preview-->
+        <scene sceneID="Hjp-dO-EEN">
+            <objects>
+                <viewController id="9vy-Q3-24W" customClass="PreviewController" customModule="OSU_Printer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Oej-y1-mhj"/>
+                        <viewControllerLayoutGuide type="bottom" id="pz6-li-OEv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0tX-5r-L5d">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X3c-OX-tOl">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="VtM-Wi-M4a"/>
+                                    <constraint firstAttribute="width" constant="600" id="YfZ-uD-jza"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VtM-Wi-M4a"/>
+                                        <exclude reference="YfZ-uD-jza"/>
+                                    </mask>
+                                </variation>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X3c-OX-tOl" firstAttribute="top" secondItem="Oej-y1-mhj" secondAttribute="bottom" id="0UT-9k-PR5"/>
+                            <constraint firstItem="X3c-OX-tOl" firstAttribute="leading" secondItem="0tX-5r-L5d" secondAttribute="leading" id="N5O-R2-YI9"/>
+                            <constraint firstAttribute="bottom" secondItem="X3c-OX-tOl" secondAttribute="bottom" id="hph-Ec-o3E"/>
+                            <constraint firstAttribute="trailing" secondItem="X3c-OX-tOl" secondAttribute="trailing" id="kXj-6P-3Fu"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Preview" id="pvL-0V-HbJ">
+                        <barButtonItem key="rightBarButtonItem" title="Print" id="css-qw-7Hk">
+                            <connections>
+                                <segue destination="cWn-Pr-48s" kind="show" identifier="ToPrintIdentifier" id="hRe-lA-wVP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="previewWebView" destination="X3c-OX-tOl" id="RX5-O2-tYz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r2i-55-uUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145" y="646"/>
         </scene>
         <!--About-->
         <scene sceneID="12c-g4-UaQ">
@@ -708,7 +760,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nAr-Q9-D0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="646"/>
+            <point key="canvasLocation" x="889" y="646"/>
         </scene>
     </scenes>
     <resources>
@@ -718,8 +770,8 @@
         <image name="icon_settings" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="1Cb-Lq-oLf"/>
         <segue reference="3D4-fA-sdr"/>
-        <segue reference="ewj-2T-jDV"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
