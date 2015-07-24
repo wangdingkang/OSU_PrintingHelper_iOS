@@ -10,11 +10,10 @@ import Foundation
 import CoreData
 
 
-/*
-This class is used to help the AccountsTableView to get the added accounts, change the stored accounts,
-and delete some account,
+/**
+    This class is used to help the AccountsTableView to get the added accounts, change the stored accounts,
+    and delete some account, haven't dealt with exceptions yet.
 */
-
 class DatabaseHelper{
     
     weak var context: NSManagedObjectContext!

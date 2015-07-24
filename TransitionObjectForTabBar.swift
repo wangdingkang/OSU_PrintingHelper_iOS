@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+    Transition animation between tabViews
+*/
 class TransitionObjectForTabBar: NSObject, UIViewControllerAnimatedTransitioning {
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {

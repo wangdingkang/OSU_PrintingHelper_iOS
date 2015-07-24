@@ -38,9 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
-        print("Open URl" + url.path! + "\n")
-        //var fileHelper = FileSystemHelper()
-        //fileHelper.copyFileFromUrlToDocument(url)
         return true
     }
 

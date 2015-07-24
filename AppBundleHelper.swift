@@ -8,17 +8,19 @@
 
 import Foundation
 
-class LocalFileHelper {
+class AppBundleHelper {
     
-    static var printerDictionary: NSDictionary?
+    static let sharedInstance = AppBundleHelper()
     
-    static var tempUser: TempUser?
+    var printerDictionary: NSDictionary?
     
-    private static var keyForTempUser = "temp_user"
+    var tempUser: TempUser?
+    
+    private let keyForTempUser = "temp_user"
     
     // Something about the app's plists
     
-    static func loadPrinterDictionary() {
+    func loadPrinterDictionary() {
         if let path = NSBundle.mainBundle().pathForResource("Resource", ofType: "plist") {
             if let tempDictionary = NSDictionary(contentsOfFile: path) {
                 print("Loaded printer dict\n")
@@ -27,7 +29,7 @@ class LocalFileHelper {
         }
     }
     
-    static func getPrinterListByDepartment(department: Department) -> [PrinterInfo]{
+    func getPrinterListByDepartment(department: Department) -> [PrinterInfo]{
         if printerDictionary == nil {
             loadPrinterDictionary()
         }
@@ -57,20 +59,20 @@ class LocalFileHelper {
     
     // Something about the NSUserDefaults
     
-    static func loadTempUser() {
+    func loadTempUser() {
         if let tempData = NSUserDefaults.standardUserDefaults().dataForKey(keyForTempUser) {
             tempUser = NSKeyedUnarchiver.unarchiveObjectWithData(tempData) as? TempUser
         }
     }
     
-    static func getTempUser() -> TempUser? {
+    func getTempUser() -> TempUser? {
         if tempUser == nil {
             loadTempUser()
         }
         return tempUser
     }
     
-    static func updateTempUser(tempUser: TempUser) {
+    func updateTempUser(tempUser: TempUser) {
         print("UPDATE TEMPUSER \(tempUser.username) \n")
         let userDefaults = NSUserDefaults.standardUserDefaults()
         let tempData = NSKeyedArchiver.archivedDataWithRootObject(tempUser)
@@ -79,7 +81,7 @@ class LocalFileHelper {
         loadTempUser()
     }
     
-    static func removeTempUser() {
+    func removeTempUser() {
         print("Remove TempUser \n")
         let userDefaults = NSUserDefaults.standardUserDefaults()
         userDefaults.removeObjectForKey(keyForTempUser)

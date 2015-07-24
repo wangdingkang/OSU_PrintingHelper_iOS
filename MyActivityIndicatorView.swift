@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+    ActivityIndicator with texts
+*/
 class MyActivityIndicatorView: UIView {
 
     var messageLabel: UILabel!

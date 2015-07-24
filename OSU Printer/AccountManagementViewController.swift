@@ -21,8 +21,10 @@ class AccountManagementViewController: UIViewController, UIPickerViewDelegate, U
     
     let numberOfComponents = 1
     
+    // if cancell button is clicked, we don't need to update the datebase
     var isCancelled = false
     
+    // if it's saving an account, we won't response to other saving requests
     var isSaving = false
     
     var passedUsername: String?
@@ -31,13 +33,13 @@ class AccountManagementViewController: UIViewController, UIPickerViewDelegate, U
     
     var passedDepartment: String?
     
-    @IBOutlet weak var sshProgressIndicator: UIActivityIndicatorView!
-    
     var existingAccount: NSManagedObject?
     
-    var myDBHelper: DatabaseHelper!
+    @IBOutlet weak var sshProgressIndicator: UIActivityIndicatorView!
     
-    var mySSHHelper: SSHHelper!
+    var myDBHelper: DatabaseHelper = DatabaseHelper(appDelegate: UIApplication.sharedApplication().delegate as! AppDelegate)
+    
+    var mySSHHelper: SSHHelper = SSHHelper.sharedInstance
     
     weak var sendDataBackDelegate: SendDataBackProtocol!
     
@@ -70,34 +72,34 @@ class AccountManagementViewController: UIViewController, UIPickerViewDelegate, U
                     if error != nil {
                         self.showSSHConnectionErrorAlert(error!)
                     }
-                    else {
+                    else if !self.isCancelled{
+                        
+                        // change an existing accout
                         if self.existingAccount != nil {
-                            // change an existing accout
-                            if !self.isCancelled {
-                                self.myDBHelper.changeAnAccount(username, password: password, department: department, existingUser: self.existingAccount!)
+                            self.myDBHelper.changeAnAccount(username, password: password, department: department, existingUser: self.existingAccount!)
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.navigationController?.popToRootViewControllerAnimated(true)
+                            }
+                        }
+                            
+                        // add a new account
+                        else {
+                            self.myDBHelper.addAnAccount(username, password: password, department: department)
+                            if self.sendDataBackDelegate != nil {
+                                self.sendDataBackDelegate!.sendDataBack(TempUser(username: username, password: password, department: department))
                                 dispatch_async(dispatch_get_main_queue()) {
                                     self.navigationController?.popToRootViewControllerAnimated(true)
                                 }
-                            }
-                        } else {
-                            // add a new account
-                            if !self.isCancelled {
-                                self.myDBHelper.addAnAccount(username, password: password, department: department)
-                                if self.sendDataBackDelegate != nil {
-                                    self.sendDataBackDelegate!.sendDataBack(TempUser(username: username, password: password, department: department))
-                                    dispatch_async(dispatch_get_main_queue()) {
-                                        self.navigationController?.popToRootViewControllerAnimated(true)
-                                    }
-                                }
+                                
                             }
                         }
                     }
                 }
-                self.isSaving = false
                 dispatch_async(dispatch_get_main_queue()) {
                     () -> Void in
                     self.sshProgressIndicator.stopAnimating()
                 }
+                self.isSaving = false
             }
         }
     }
@@ -109,12 +111,6 @@ class AccountManagementViewController: UIViewController, UIPickerViewDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // init my DBHelper
-        myDBHelper = DatabaseHelper(appDelegate: UIApplication.sharedApplication().delegate as! AppDelegate)
-        
-        // init my SSHHelper
-        mySSHHelper = SSHHelper.sharedInstance
         
         if passedUsername != nil {
             usernameTextField.text = passedUsername
@@ -128,13 +124,6 @@ class AccountManagementViewController: UIViewController, UIPickerViewDelegate, U
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    deinit {
-        dispatch_async(sshTestAccountQueue) {
-            Void -> () in
-            self.mySSHHelper.releaseConnection()
-        }
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
@@ -156,8 +145,8 @@ class AccountManagementViewController: UIViewController, UIPickerViewDelegate, U
                 () -> Void in
                 
                 let emptyAlert = UIAlertController(
-                    title: "Alert",
-                    message: "Your username or password should not be empty",
+                    title: "Your username or password should not be empty",
+                    message: "",
                     preferredStyle: UIAlertControllerStyle.Alert
                 )
                 
@@ -176,8 +165,8 @@ class AccountManagementViewController: UIViewController, UIPickerViewDelegate, U
                 () -> Void in
                 
                 let emptyAlert = UIAlertController(
-                    title: "Alert",
-                    message: "This account has existed in the list, you can change it instead",
+                    title: "This account has existed in the list, you can change it instead",
+                    message: "",
                     preferredStyle: UIAlertControllerStyle.Alert
                 )
                 
@@ -193,25 +182,16 @@ class AccountManagementViewController: UIViewController, UIPickerViewDelegate, U
             dispatch_async(dispatch_get_main_queue()) {
                 () -> Void in
                 let errorAlert = UIAlertController(
-                    title: "Alert",
-                    message: connectionError,
+                    title: connectionError,
+                    message: "",
                     preferredStyle: UIAlertControllerStyle.Alert
                 )
                 
                 errorAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
                 
                 self.presentViewController(errorAlert, animated: true, completion: nil)
-            }}
+            }
+        }
     }
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }

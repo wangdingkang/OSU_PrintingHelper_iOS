@@ -9,8 +9,11 @@
 import Foundation
 
 class DocumentFile {
+
     var filename: String
+    
     var filesize: UInt64
+    
     var modifiedTime: NSDate?
     
     init(filename: String, filesize: UInt64, modifiedTime: NSDate?){
@@ -32,6 +35,7 @@ class DocumentFile {
             }
         }
     }
+
     
     
 }

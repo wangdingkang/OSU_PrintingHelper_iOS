@@ -8,13 +8,12 @@
 
 import Foundation
 
-class InternetConnectionUtility {
+class Utils {
     
     static func getMetworkStatus() -> NetworkStatus {
         let reachability: Reachability = Reachability.reachabilityForInternetConnection()
         return reachability.currentReachabilityStatus()
     }
-    
     
     
 }

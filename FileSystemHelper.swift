@@ -8,21 +8,20 @@
 
 import Foundation
 
+/**
+    I'll rewrite this class, in order to hackle doc, docx files and images.
+    I'll probably involve multithread.
+*/
 class FileSystemHelper {
     
-    var fileManager: NSFileManager
+    var fileManager = NSFileManager.defaultManager()
     
-    let fileQueue: dispatch_queue_t
+    //let fileQueue = dispatch_queue_create("FILE.queue", DISPATCH_QUEUE_SERIAL)
     
     var DocumentsRootPath: String {
         get {
             return (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String).stringByAppendingPathComponent("Inbox")
         }
-    }
-    
-    init() {
-        fileQueue = dispatch_queue_create("FILE.queue", DISPATCH_QUEUE_SERIAL)
-        fileManager = NSFileManager.defaultManager()
     }
     
     func getUserDocumentPaths() -> [String]? {
@@ -75,16 +74,5 @@ class FileSystemHelper {
             return false
         }
     }
-    
-    
-//    func copyFileFromUrlToDocument(url: NSURL) -> Bool {
-//        if let sourceFilename = url.lastPathComponent {
-//            var destPath = DocumentsRootPath.stringByAppendingPathComponent(sourceFilename)
-//            var error: NSError?
-//            print("Copy from " + url.path! + " to " + destPath + "\n")
-//            fileManager.copyItemAtPath(url.path!, toPath: destPath, error: &error)
-//        }
-//        return true
-//    }
     
 }

@@ -28,7 +28,7 @@
 		5E68A8841B5ACD830096B04C /* DocumentFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E68A8831B5ACD830096B04C /* DocumentFile.swift */; };
 		5E68A8861B5AD93E0096B04C /* FilesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E68A8851B5AD93E0096B04C /* FilesTableViewCell.swift */; };
 		5E68A8881B5B34200096B04C /* Resource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E68A8871B5B34200096B04C /* Resource.plist */; };
-		5E68A88A1B5B41FD0096B04C /* LocalFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E68A8891B5B41FD0096B04C /* LocalFileHelper.swift */; };
+		5E68A88A1B5B41FD0096B04C /* AppBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E68A8891B5B41FD0096B04C /* AppBundleHelper.swift */; };
 		5E68A88C1B5B48090096B04C /* PrinterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E68A88B1B5B48090096B04C /* PrinterInfo.swift */; };
 		5E68A8911B5C63770096B04C /* SendDataBackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E68A8901B5C63770096B04C /* SendDataBackProtocol.swift */; };
 		5E68A8931B5C80A80096B04C /* TempUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E68A8921B5C80A80096B04C /* TempUser.swift */; };
@@ -36,7 +36,7 @@
 		5ED055BB1B607302008A34C1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED055BA1B607302008A34C1 /* AboutViewController.swift */; };
 		5ED055BD1B607974008A34C1 /* TaskFinishedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED055BC1B607974008A34C1 /* TaskFinishedProtocol.swift */; };
 		5ED055BF1B607CF2008A34C1 /* PrintingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED055BE1B607CF2008A34C1 /* PrintingOption.swift */; };
-		5EE231BF1B5747BF00236AE2 /* InternetConnectionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE231BE1B5747BF00236AE2 /* InternetConnectionUtility.swift */; };
+		5EE231BF1B5747BF00236AE2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE231BE1B5747BF00236AE2 /* Utils.swift */; };
 		5EE231C31B574C5400236AE2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE231C21B574C5400236AE2 /* Reachability.m */; };
 		5EE231C51B5757C900236AE2 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE231C41B5757C900236AE2 /* RootTabBarController.swift */; };
 		5EE231C71B57FDE500236AE2 /* SSHHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE231C61B57FDE500236AE2 /* SSHHelper.swift */; };
@@ -79,7 +79,7 @@
 		5E68A8831B5ACD830096B04C /* DocumentFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentFile.swift; sourceTree = "<group>"; };
 		5E68A8851B5AD93E0096B04C /* FilesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesTableViewCell.swift; sourceTree = "<group>"; };
 		5E68A8871B5B34200096B04C /* Resource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Resource.plist; path = ../Resource.plist; sourceTree = "<group>"; };
-		5E68A8891B5B41FD0096B04C /* LocalFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileHelper.swift; sourceTree = "<group>"; };
+		5E68A8891B5B41FD0096B04C /* AppBundleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBundleHelper.swift; sourceTree = "<group>"; };
 		5E68A88B1B5B48090096B04C /* PrinterInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterInfo.swift; sourceTree = "<group>"; };
 		5E68A8901B5C63770096B04C /* SendDataBackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendDataBackProtocol.swift; sourceTree = "<group>"; };
 		5E68A8921B5C80A80096B04C /* TempUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempUser.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		5ED055BA1B607302008A34C1 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		5ED055BC1B607974008A34C1 /* TaskFinishedProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskFinishedProtocol.swift; sourceTree = "<group>"; };
 		5ED055BE1B607CF2008A34C1 /* PrintingOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintingOption.swift; sourceTree = "<group>"; };
-		5EE231BE1B5747BF00236AE2 /* InternetConnectionUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetConnectionUtility.swift; sourceTree = "<group>"; };
+		5EE231BE1B5747BF00236AE2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5EE231C01B574C5300236AE2 /* OSU Printer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OSU Printer-Bridging-Header.h"; sourceTree = "<group>"; };
 		5EE231C11B574C5400236AE2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		5EE231C21B574C5400236AE2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -195,10 +195,10 @@
 			isa = PBXGroup;
 			children = (
 				5E01BCA81B55892C00F5A230 /* DatabaseHelper.swift */,
-				5E68A8891B5B41FD0096B04C /* LocalFileHelper.swift */,
-				5EE231BE1B5747BF00236AE2 /* InternetConnectionUtility.swift */,
-				5EE231C61B57FDE500236AE2 /* SSHHelper.swift */,
 				5EE231C81B58A81500236AE2 /* FileSystemHelper.swift */,
+				5EE231BE1B5747BF00236AE2 /* Utils.swift */,
+				5E68A8891B5B41FD0096B04C /* AppBundleHelper.swift */,
+				5EE231C61B57FDE500236AE2 /* SSHHelper.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -212,9 +212,9 @@
 				5E01BCAE1B558BC900F5A230 /* Enums.swift */,
 				5E68A8831B5ACD830096B04C /* DocumentFile.swift */,
 				5E68A88B1B5B48090096B04C /* PrinterInfo.swift */,
+				5ED055BE1B607CF2008A34C1 /* PrintingOption.swift */,
 				5E3AA7EF1B5E0E2C00D08D01 /* MyActivityIndicatorView.swift */,
 				5ED055B61B604976008A34C1 /* TransitionObjectForTabBar.swift */,
-				5ED055BE1B607CF2008A34C1 /* PrintingOption.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -386,7 +386,7 @@
 				5E68A8841B5ACD830096B04C /* DocumentFile.swift in Sources */,
 				5EE231C31B574C5400236AE2 /* Reachability.m in Sources */,
 				5EE231C51B5757C900236AE2 /* RootTabBarController.swift in Sources */,
-				5E68A88A1B5B41FD0096B04C /* LocalFileHelper.swift in Sources */,
+				5E68A88A1B5B41FD0096B04C /* AppBundleHelper.swift in Sources */,
 				5E3AA7F81B5F0F2F00D08D01 /* HistoryTableViewCell.swift in Sources */,
 				5E01BC9E1B54B38300F5A230 /* HistoryTableViewController.swift in Sources */,
 				5E3AA7F41B5EE30600D08D01 /* PrintingHistory.swift in Sources */,
@@ -403,7 +403,7 @@
 				5E01BCA91B55892C00F5A230 /* DatabaseHelper.swift in Sources */,
 				5E01BCAF1B558BC900F5A230 /* Enums.swift in Sources */,
 				5E68A8931B5C80A80096B04C /* TempUser.swift in Sources */,
-				5EE231BF1B5747BF00236AE2 /* InternetConnectionUtility.swift in Sources */,
+				5EE231BF1B5747BF00236AE2 /* Utils.swift in Sources */,
 				5E3AA7F01B5E0E2C00D08D01 /* MyActivityIndicatorView.swift in Sources */,
 				5E01BC761B543E1600F5A230 /* AppDelegate.swift in Sources */,
 				5E68A8861B5AD93E0096B04C /* FilesTableViewCell.swift in Sources */,
