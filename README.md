@@ -7,7 +7,7 @@ This is a printing application for the Ohio State University. The intention of c
 
 ## Usage
 
-For now, my app only supports printing pdf files, you can upload your pdf files onto your email box, dropbox or some other platform. And in these apps, you need to use "Open in" function to copy your file to the local folder of my app. After that, you need to add your OSU account, then you are good to print!
+For now, my app supports printing pdf, mircrosoft word, and images, you can upload your files onto your email box, dropbox or some other platform. And in these apps, you need to use "Open in" function to copy your file to the local folder of my app. After that, you need to add your OSU account, then you are good to print!
 
 ## Credit
 
