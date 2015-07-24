@@ -18,7 +18,7 @@ class SSHHelper {
     
     var tempUser: TempUser?
     
-    let hostnameForCSE = "gamma.cse.ohio-state.edu"
+    let hostnameForCSE = "beta.cse.ohio-state.edu"
     
     let hostnameForECE = "rh026.ece.ohio-state.edu"
     
@@ -65,6 +65,8 @@ class SSHHelper {
                     error = "Invalid username or password."
                 } else {
                     self.tempUser = tempUser
+                    tempSession.channel.requestPty  = true
+                    tempSession.channel.ptyTerminalType = NMSSHChannelPtyTerminal.VT100
                 }
             }
         } else {
@@ -91,15 +93,15 @@ class SSHHelper {
         tempFTPConnection = NMSFTP(session: tempSession)
         tempFTPConnection.connect()
         
-        if !tempFTPConnection.directoryExistsAtPath("./" + serverTempFolderPath) {
-            tempFTPConnection.createDirectoryAtPath("./" + serverTempFolderPath)
+        if !tempFTPConnection.directoryExistsAtPath(serverTempFolderPath + "/") {
+            tempFTPConnection.createDirectoryAtPath(serverTempFolderPath + "/")
         }
         
         let fromPath = foldername.stringByAppendingPathComponent(filename)
         let toPath = serverTempFolderPath.stringByAppendingPathComponent(filename)
         
         let uploadOK = tempFTPConnection.writeFileAtPath(foldername.stringByAppendingPathComponent(filename), toFileAtPath:
-            serverTempFolderPath.stringByAppendingPathComponent(filename))
+            "\"\(serverTempFolderPath.stringByAppendingPathComponent(filename))\"")
         
         tempFTPConnection.disconnect()
         if !uploadOK {
@@ -109,36 +111,28 @@ class SSHHelper {
     
     func printPDF(newUser: TempUser, sourceFoldername: String, sourceFilename: String, printingOption: PrintingOption, inout error: String?) {
         dispatch_semaphore_wait(sshSemaphore, DISPATCH_TIME_FOREVER)
-//        taskFinishedDelegate.taskFinishedfeedback("Checking...")
-//        if !isTempSessionActive(newUser) {
-//            // create a new session
-//            if tempSession != nil {
-//                tempSession?.disconnect()
-//            }
-//            createANewSession(newUser, error: &error)
-//            if error != nil {
-//                dispatch_semaphore_signal(sshSemaphore)
-//                return
-//            }
-//        }
-//        taskFinishedDelegate.taskFinishedfeedback("Creating temp folder on server...")
-//        
-//        
-//        if error == nil {
-//            taskFinishedDelegate.taskFinishedfeedback("Start uploading...")
-//            //createFolderAndUploadFileToServer(sourceFoldername, filename: sourceFilename, error: &error)
-//            if error == nil {
-//                taskFinishedDelegate.taskFinishedfeedback("Start Printing...")
-//                commandToPrintPDF(sourceFilename, printingOption: printingOption, error: &error)
-//                //tempSession.channel.closeShell()
-//            }
-//        }
+        taskFinishedDelegate.taskFinishedfeedback("Checking...")
+        if !isTempSessionActive(newUser) {
+            // create a new session
+            if tempSession != nil {
+                tempSession?.disconnect()
+            }
+            createANewSession(newUser, error: &error)
+            if error != nil {
+                dispatch_semaphore_signal(sshSemaphore)
+                return
+            }
+        }
+        taskFinishedDelegate.taskFinishedfeedback("Creating temp folder on server...")
         
-        tempSession.channel.requestPty  = true
-        tempSession.channel.ptyTerminalType = NMSSHChannelPtyTerminal.VT100
-        tempSession.channel.startShell(nil)
-        tempSession.channel.execute("mkdir temp_print/1", error: nil)
-        tempSession.channel.closeShell()
+        if error == nil {
+            taskFinishedDelegate.taskFinishedfeedback("Start uploading...")
+            createFolderAndUploadFileToServer(sourceFoldername, filename: sourceFilename, error: &error)
+            if error == nil {
+                commandToPrintPDF(sourceFilename, printingOption: printingOption, error: &error)
+            }
+        }
+
         dispatch_semaphore_signal(sshSemaphore)
     }
     
@@ -152,18 +146,19 @@ class SSHHelper {
         
         let command = getPrintCommand(printingOption, filename: serverTempFolderPath.stringByAppendingPathComponent(filename))
         
-        tempSession.channel.execute(mkdirCommand.stringByAppendingPathComponent("\(printed++)"), error: nil)
+        tempSession.channel.execute(mkdirCommand.stringByAppendingPathComponent("\(printed++)"), error: nil, timeout: 1)
+        
     }
     
-//    func removeFileAtPath(filename: String) {
-//        dispatch_semaphore_wait(sshSemaphore, DISPATCH_TIME_FOREVER)
-//        if tempSession != nil && tempSession.connected {
-//            tempSession.channel.requestPty = true
-//            let command = "\(removeFileCommand) \(serverTempFolderPath.stringByAppendingPathComponent(filename))"
-//            tempSession.channel.execute(command, error: nil)
-//        }
-//        dispatch_semaphore_signal(sshSemaphore)
-//    }
+    func removeFileAtPath(filename: String) {
+        dispatch_semaphore_wait(sshSemaphore, DISPATCH_TIME_FOREVER)
+        if tempSession != nil && tempSession.connected {
+            tempSession.channel.requestPty = true
+            let command = "\(removeFileCommand) \(serverTempFolderPath.stringByAppendingPathComponent(filename))"
+            tempSession.channel.execute(command, error: nil)
+        }
+        dispatch_semaphore_signal(sshSemaphore)
+    }
     
     
     func releaseConnection() {

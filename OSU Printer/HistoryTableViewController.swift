@@ -74,6 +74,7 @@ class HistoryTableViewController: UITableViewController {
         // Configure the cell...
         cell.filenameLabel?.text = data[indexPath.row].filename
         cell.descriptionLabel?.text = "Printed at \(myDateFormatter.stringFromDate(data[indexPath.row].printedAt))"
+        cell.iconView?.image = UIImage(named: data[indexPath.row].fileType.rawValue)
         
         return cell
     }
@@ -128,8 +129,8 @@ class HistoryTableViewController: UITableViewController {
     
     func showFileNotExistsAlert(selectedIndex: Int) {
         let errorAlert = UIAlertController(
-            title: "Alert",
-            message: "Sorry, the file doesn't exist, do you want to delete the record?",
+            title: "Sorry, the file doesn't exist, do you want to delete the record?",
+            message: "",
             preferredStyle: UIAlertControllerStyle.Alert
         )
         

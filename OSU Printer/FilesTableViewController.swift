@@ -71,9 +71,10 @@ class FilesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("FilesTableCellIdentifier", forIndexPath: indexPath) as! FilesTableViewCell
 
         // Configure the cell...
-
+        
         cell.filenameLabel?.text = data[indexPath.row].filename
         cell.fileDescriptionLabel?.text = "Modified at \(myDateFormatter.stringFromDate(data[indexPath.row].modifiedTime!))" + "\n" + "File size \(data[indexPath.row].filesizeInString)"
+        cell.iconView?.image = UIImage(named: data[indexPath.row].fileType.rawValue)
         
         return cell
     }

@@ -215,7 +215,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7wP-jt-MW7" id="w2T-au-Noa">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_pdf" translatesAutoresizingMaskIntoConstraints="NO" id="3ya-zM-Wy8">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ya-zM-Wy8">
                                             <rect key="frame" x="21" y="20" width="43" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="43" id="69n-x8-k2H"/>
@@ -349,7 +349,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7m5-hw-Wdc" id="vO4-BD-nf2">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_pdf" translatesAutoresizingMaskIntoConstraints="NO" id="Iz5-GI-usN">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iz5-GI-usN">
                                             <rect key="frame" x="21" y="20" width="43" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="43" id="GDL-Ux-8Yd"/>
@@ -394,7 +394,7 @@
                                 <connections>
                                     <outlet property="descriptionLabel" destination="NYI-vk-TMm" id="3os-VW-FVp"/>
                                     <outlet property="filenameLabel" destination="OfH-IW-LU9" id="Ljq-Id-8u5"/>
-                                    <outlet property="iconVIew" destination="Iz5-GI-usN" id="Bmb-TB-AR3"/>
+                                    <outlet property="iconView" destination="Iz5-GI-usN" id="QVB-gD-mWH"/>
                                     <segue destination="cWn-Pr-48s" kind="show" identifier="HistoryReprintIdentifier" id="ewj-2T-jDV"/>
                                 </connections>
                             </tableViewCell>
@@ -707,7 +707,6 @@
         <image name="icon_accounts" width="22" height="22"/>
         <image name="icon_files" width="22" height="22"/>
         <image name="icon_history" width="22" height="22"/>
-        <image name="icon_pdf" width="90" height="125"/>
         <image name="icon_settings" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>

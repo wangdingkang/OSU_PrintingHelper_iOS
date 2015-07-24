@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3EBB2B80-2CD7-4E01-AE4D-2C5C17B7FF45</string>
+	<key>IDESourceControlProjectName</key>
+	<string>OSU Printer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B7E1453C780F6A3D7A4A1CF73340391BC7B19EDE</key>
+		<string>https://github.com/wangdingkang/OSU-Printer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>OSU Printer.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B7E1453C780F6A3D7A4A1CF73340391BC7B19EDE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wangdingkang/OSU-Printer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B7E1453C780F6A3D7A4A1CF73340391BC7B19EDE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B7E1453C780F6A3D7A4A1CF73340391BC7B19EDE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OSU%20Printer</string>
+		</dict>
+	</array>
+</dict>
+</plist>
