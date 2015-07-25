@@ -29,6 +29,7 @@
         <!--Account-->
         <scene sceneID="d7J-Do-N3G">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0f9-PU-kVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="ETC-Q2-AJg" customClass="AccountsTableViewController" customModule="OSU_Printer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uYy-Gg-JS5">
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
@@ -84,7 +85,6 @@
                         </attributedString>
                     </refreshControl>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0f9-PU-kVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-646" y="-74"/>
         </scene>
@@ -771,7 +771,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1Cb-Lq-oLf"/>
-        <segue reference="3D4-fA-sdr"/>
+        <segue reference="G8w-Ns-844"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
