@@ -29,7 +29,6 @@
         <!--Account-->
         <scene sceneID="d7J-Do-N3G">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0f9-PU-kVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="ETC-Q2-AJg" customClass="AccountsTableViewController" customModule="OSU_Printer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uYy-Gg-JS5">
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
@@ -85,6 +84,7 @@
                         </attributedString>
                     </refreshControl>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0f9-PU-kVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-646" y="-74"/>
         </scene>
@@ -111,13 +111,16 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your department" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQd-N8-Fux">
-                                <rect key="frame" x="16" y="156" width="192" height="21"/>
+                                <rect key="frame" x="16" y="160" width="568" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="JuS-z7-6HG"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtJ-J2-jKg">
-                                <rect key="frame" x="16" y="193" width="568" height="162"/>
+                                <rect key="frame" x="16" y="209" width="568" height="162"/>
                                 <connections>
                                     <outlet property="dataSource" destination="08K-0G-MXB" id="7i6-es-hsX"/>
                                     <outlet property="delegate" destination="08K-0G-MXB" id="4tL-cr-hPU"/>
@@ -130,11 +133,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jtJ-J2-jKg" firstAttribute="top" secondItem="aQd-N8-Fux" secondAttribute="bottom" constant="16" id="3NR-hm-PPe"/>
                             <constraint firstItem="jtJ-J2-jKg" firstAttribute="top" secondItem="aQd-N8-Fux" secondAttribute="bottom" constant="8" symbolic="YES" id="48K-7P-wFk"/>
+                            <constraint firstItem="jtJ-J2-jKg" firstAttribute="top" secondItem="aQd-N8-Fux" secondAttribute="bottom" constant="20" id="6La-JK-DrC"/>
+                            <constraint firstItem="aQd-N8-Fux" firstAttribute="leading" secondItem="DUD-eV-aiD" secondAttribute="leading" id="992-B0-3sF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jtJ-J2-jKg" secondAttribute="trailing" id="9U7-eh-RIN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jtJ-J2-jKg" secondAttribute="trailing" constant="-16" id="A5A-Ys-qhR"/>
-                            <constraint firstItem="aQd-N8-Fux" firstAttribute="leading" secondItem="wY0-Mj-kwa" secondAttribute="leadingMargin" id="A6s-Ti-kag"/>
                             <constraint firstItem="jtJ-J2-jKg" firstAttribute="leading" secondItem="wY0-Mj-kwa" secondAttribute="leadingMargin" id="CBf-IK-uYO"/>
                             <constraint firstAttribute="centerX" secondItem="Mni-eM-Hzq" secondAttribute="centerX" constant="-0.5" id="HtG-xx-pOd"/>
                             <constraint firstItem="aQd-N8-Fux" firstAttribute="top" secondItem="DUD-eV-aiD" secondAttribute="bottom" constant="8" id="MKN-dI-4SW"/>
@@ -150,9 +153,10 @@
                             <constraint firstItem="jtJ-J2-jKg" firstAttribute="leading" secondItem="wY0-Mj-kwa" secondAttribute="leadingMargin" id="bdK-HX-n1o"/>
                             <constraint firstItem="DUD-eV-aiD" firstAttribute="top" secondItem="Zd6-ej-dCN" secondAttribute="bottom" constant="8" id="et5-Ii-dR2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jtJ-J2-jKg" secondAttribute="trailing" id="jG2-KH-ajS"/>
-                            <constraint firstItem="aQd-N8-Fux" firstAttribute="top" secondItem="DUD-eV-aiD" secondAttribute="bottom" constant="16" id="kTd-pp-fyY"/>
+                            <constraint firstItem="aQd-N8-Fux" firstAttribute="trailing" secondItem="DUD-eV-aiD" secondAttribute="trailing" id="kD7-SJ-vg4"/>
                             <constraint firstItem="jtJ-J2-jKg" firstAttribute="top" secondItem="DUD-eV-aiD" secondAttribute="bottom" constant="8" id="kfs-nJ-YAJ"/>
                             <constraint firstAttribute="centerY" secondItem="Mni-eM-Hzq" secondAttribute="centerY" constant="26.5" id="phX-Ly-5to"/>
+                            <constraint firstItem="aQd-N8-Fux" firstAttribute="top" secondItem="DUD-eV-aiD" secondAttribute="bottom" constant="20" id="qcf-iv-njn"/>
                             <constraint firstItem="aQd-N8-Fux" firstAttribute="leading" secondItem="wY0-Mj-kwa" secondAttribute="leadingMargin" id="uAQ-X3-elM"/>
                             <constraint firstItem="jtJ-J2-jKg" firstAttribute="leading" secondItem="wY0-Mj-kwa" secondAttribute="leadingMargin" constant="-16" id="vnU-Om-uVk"/>
                             <constraint firstItem="DUD-eV-aiD" firstAttribute="leading" secondItem="wY0-Mj-kwa" secondAttribute="leadingMargin" id="xDo-G5-qeI"/>
@@ -485,7 +489,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OSU Printer Version 1.0. Tab icons from createful/pdf-vector-icons, file icons from dreamstale, 50 file type vector icons." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXL-aB-gu9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OSU Printer Version 1.1.0. Tab icons from createful/pdf-vector-icons, file icons from dreamstale, 50 file type vector icons." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXL-aB-gu9">
                                 <rect key="frame" x="16" y="237" width="568" height="126"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

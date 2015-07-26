@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AccountManagementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AccountManagementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var usernameTextField: UITextField!
     
@@ -112,6 +112,9 @@ class AccountManagementViewController: UIViewController, UIPickerViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        usernameTextField.delegate = self
+        passwordField.delegate = self
+        
         if passedUsername != nil {
             usernameTextField.text = passedUsername
             passwordField.text = passedPassword
@@ -124,6 +127,19 @@ class AccountManagementViewController: UIViewController, UIPickerViewDelegate, U
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if usernameTextField.editing{
+            passwordField.becomeFirstResponder()
+        } else if passwordField.editing {
+            passwordField.endEditing(true)
+        }
+        return true
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
