@@ -115,8 +115,8 @@ class HistoryTableViewController: UITableViewController {
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
         if identifier != nil && identifier! == "HistoryPreviewIdentifier" {
-            if let selectedIndex = tableView.indexPathForCell(sender as! HistoryTableViewCell)?.row {
-                if !myFileHelper.fileExistsInRootFolder(data[selectedIndex].filename) {
+            if let selectedIndex = tableView.indexPathForCell(sender as! HistoryTableViewCell) {
+                if !myFileHelper.fileExistsInRootFolder(data[selectedIndex.row].filename) {
                     showFileNotExistsAlert(selectedIndex)
                     return false
                 }
@@ -125,7 +125,7 @@ class HistoryTableViewController: UITableViewController {
         return true
     }
     
-    func showFileNotExistsAlert(selectedIndex: Int) {
+    func showFileNotExistsAlert(selectedIndex: NSIndexPath) {
         let errorAlert = UIAlertController(
             title: "Sorry, the file doesn't exist, do you want to delete the record?",
             message: "",
@@ -135,8 +135,8 @@ class HistoryTableViewController: UITableViewController {
         errorAlert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler:
             {
                 (alertAction: UIAlertAction!) -> Void in
-                self.myDBHelper.deleteAnPrintingHistory(self.data[selectedIndex])
-                self.data.removeAtIndex(selectedIndex)
+                self.myDBHelper.deleteAnPrintingHistory(self.data[selectedIndex.row])
+                self.data.removeAtIndex(selectedIndex.row)
                 self.tableView.deleteRowsAtIndexPaths([selectedIndex], withRowAnimation: .Fade)
         }))
         
