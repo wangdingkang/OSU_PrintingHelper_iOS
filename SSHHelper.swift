@@ -18,6 +18,7 @@ class SSHHelper {
     
     var tempUser: TempUser?
     
+    // try to connect to different servers in order to avoid frozen.
     let hostnameForCSE = "gamma.cse.ohio-state.edu"
     
     let hostnameForECE = "rh026.ece.ohio-state.edu"
@@ -27,6 +28,10 @@ class SSHHelper {
     let removeFileCommand = "rm"
     
     let mkdirCommand = "mkdir temp_print"
+    
+    let fitToPageCommand = " -o fit-to-page "
+    
+    let twoSidedCommand = " -o sides=two-sided-long-edge "
     
     weak var taskFinishedDelegate: TaskFinishedProtocol!
     
@@ -38,9 +43,20 @@ class SSHHelper {
     
     private init() {}
     
+    // change the way to get print commands.
+    // add fit in one page command for printing images.
     private func getPrintCommand(printingOption: PrintingOption, filename: String) -> String {
-        return printingOption.isDuplex ? "lp -d \(printingOption.printerName) -o sides=two-sided-long-edge -n \(printingOption.copies) \"\(filename)\"" :
-        "lp -d \(printingOption.printerName) -n \(printingOption.copies) \"\(filename)\""
+        var res = "lp -d \(printingOption.printerName)"
+        if printingOption.isDuplex {
+            res += twoSidedCommand
+        }
+        if printingOption.isFitOnePage {
+            res += fitToPageCommand
+        }
+        res += " -n \(printingOption.copies) \"\(filename)\""
+        return res
+        //        return printingOption.isDuplex ? "lp -d \(printingOption.printerName) -o sides=two-sided-long-edge -n \(printingOption.copies) \"\(filename)\"" :
+        //        "lp -d \(printingOption.printerName) -n \(printingOption.copies) \"\(filename)\""
     }
     
     private func createANewSession(tempUser: TempUser, inout error: String?){
@@ -112,17 +128,25 @@ class SSHHelper {
     func printFile(newUser: TempUser, sourceFoldername: String, sourceFile: DocumentFile, printingOption: PrintingOption, inout error: String?) {
         dispatch_semaphore_wait(sshSemaphore, DISPATCH_TIME_FOREVER)
         taskFinishedDelegate.taskFinishedfeedback("Checking...")
-        if !isTempSessionActive(newUser) {
-            // create a new session
-            if tempSession != nil {
-                tempSession?.disconnect()
-            }
-            createANewSession(newUser, error: &error)
-            if error != nil {
-                dispatch_semaphore_signal(sshSemaphore)
-                return
-            }
+        // There is a bug in version 1.1.0, we need to disconnect manually and reconnect.
+        // Sometimes, the connection will be lost and the return value of session.authority is still true.
+        
+        //    if !isTempSessionActive(newUser) {
+        //        // create a new session
+        //        if tempSession != nil {
+        //            tempSession?.disconnect()
+        //        }
+        
+        if tempSession != nil {
+            tempSession.disconnect()
         }
+        createANewSession(newUser, error: &error)
+        if error != nil {
+            dispatch_semaphore_signal(sshSemaphore)
+            return
+        }
+        
+        //    }
         taskFinishedDelegate.taskFinishedfeedback("Creating temp folder on server...")
         
         if error == nil {
@@ -138,7 +162,7 @@ class SSHHelper {
                 }
             }
         }
-
+        
         dispatch_semaphore_signal(sshSemaphore)
     }
     
@@ -149,7 +173,6 @@ class SSHHelper {
             error = "Connection unexpectedly interrupted."
             return
         }
-        
         let cdInCommand = "cd temp_print; "
         let conversionCommand = "soffice --headless --convert-to pdf \"\(filename)\"; "
         let printCommand = getPrintCommand(printingOption, filename: filename.stringByDeletingPathExtension + ".pdf") + "; "

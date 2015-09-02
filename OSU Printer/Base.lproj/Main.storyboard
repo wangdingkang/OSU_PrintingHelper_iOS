@@ -489,7 +489,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OSU Printer Version 1.1.0. Tab icons from createful/pdf-vector-icons, file icons from dreamstale, 50 file type vector icons." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXL-aB-gu9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OSU Printer Version 1.2.0. Tab icons from createful/pdf-vector-icons, file icons from dreamstale, 50 file type vector icons." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXL-aB-gu9">
                                 <rect key="frame" x="16" y="237" width="568" height="126"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -690,6 +690,29 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="YuV-Y7-yPy">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YuV-Y7-yPy" id="6cM-G2-z57">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fit One Page (for images)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6u4-Zp-7Cb">
+                                                    <rect key="frame" x="8" y="11" width="527" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GOx-fi-8Yy">
+                                                    <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                    <color key="onTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GOx-fi-8Yy" secondAttribute="bottom" constant="-2" id="Edf-qI-8gZ"/>
+                                                <constraint firstItem="GOx-fi-8Yy" firstAttribute="trailing" secondItem="6cM-G2-z57" secondAttribute="trailingMargin" id="FDl-dx-nsQ"/>
+                                                <constraint firstItem="GOx-fi-8Yy" firstAttribute="top" secondItem="6cM-G2-z57" secondAttribute="topMargin" constant="-2" id="lwD-XF-gSr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GeX-4h-3Pq">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GeX-4h-3Pq" id="Hxb-y2-P0S">
@@ -756,6 +779,7 @@
                         <outlet property="copiesStepper" destination="UJz-5r-xQe" id="Kwi-Uo-q2o"/>
                         <outlet property="departmentLabel" destination="mK8-Cb-Exw" id="En9-ml-Hak"/>
                         <outlet property="duplexSwitch" destination="lJm-tD-NtP" id="nl0-bp-Blv"/>
+                        <outlet property="fitOnePageSwitch" destination="GOx-fi-8Yy" id="nDo-Cb-W8H"/>
                         <outlet property="printButton" destination="hlc-E7-U8C" id="GkX-hr-yhG"/>
                         <outlet property="printerDescriptionLabel" destination="YjY-er-rde" id="uwt-tR-Tux"/>
                         <outlet property="printerPickerView" destination="CgO-E2-vQP" id="URS-96-0Dw"/>

@@ -16,10 +16,13 @@ class PrintingOption {
     
     var isDuplex: Bool
     
-    init(printerName: String, copies: Int, isDuplex: Bool) {
+    var isFitOnePage: Bool
+    
+    init(printerName: String, copies: Int, isDuplex: Bool, isFitOnePage: Bool) {
         self.printerName = printerName
         self.copies = copies
         self.isDuplex = isDuplex
+        self.isFitOnePage = isFitOnePage
     }
     
 }

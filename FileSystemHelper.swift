@@ -25,9 +25,9 @@ class FileSystemHelper {
     }
     
     func getUserDocumentPaths() -> [String]? {
-        var noError: NSError?
-        let files = fileManager.contentsOfDirectoryAtPath(DocumentsRootPath, error: &noError) as? [String]
-        if noError == nil{
+        var error: NSError?
+        let files = fileManager.contentsOfDirectoryAtPath(DocumentsRootPath, error: &error) as? [String]
+        if error == nil{
             if files != nil {
                 for filename in files! {
                     print(filename + "\n")
@@ -35,7 +35,6 @@ class FileSystemHelper {
                 return files
             }
         } else {
-            print("oh, no")
             return nil
         }
         return nil

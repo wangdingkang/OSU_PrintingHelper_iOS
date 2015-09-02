@@ -14,6 +14,8 @@ class PrintingSettingsTableViewController: UITableViewController, UIPickerViewDe
     
     @IBOutlet weak var duplexSwitch: UISwitch!
     
+    @IBOutlet weak var fitOnePageSwitch: UISwitch!
+    
     @IBOutlet weak var copiesStepper: UIStepper!
     
     @IBAction func copiesStepperValueChanged(sender: UIStepper) {
@@ -77,6 +79,7 @@ class PrintingSettingsTableViewController: UITableViewController, UIPickerViewDe
             isPrinting = true
             let copies = Int(copiesStepper.value)
             let isDuplex = duplexSwitch.on
+            let isFitOnePage = fitOnePageSwitch.on
             let printerName = printers[printerPickerView.selectedRowInComponent(0)].name
             
             progressView.startAnimating()
@@ -85,7 +88,7 @@ class PrintingSettingsTableViewController: UITableViewController, UIPickerViewDe
                 
                 () -> Void in
                 var error: String?
-                self.mySSHHelper.printFile(self.tempUser, sourceFoldername: self.toPrintFoldername, sourceFile: self.toPrintFile, printingOption: PrintingOption(printerName: printerName, copies: copies, isDuplex: isDuplex), error: &error)
+                self.mySSHHelper.printFile(self.tempUser, sourceFoldername: self.toPrintFoldername, sourceFile: self.toPrintFile, printingOption: PrintingOption(printerName: printerName, copies: copies, isDuplex: isDuplex, isFitOnePage: isFitOnePage), error: &error)
                 
                 dispatch_sync(dispatch_get_main_queue()) {
                     self.progressView.stopAnimating()
@@ -122,13 +125,17 @@ class PrintingSettingsTableViewController: UITableViewController, UIPickerViewDe
         super.viewWillAppear(animated)
         tempUser = myAppBundleHelper.getTempUser()
         
-        if tempUser != nil {
+        if tempUser != nil && toPrintFile != nil{
             departmentLabel?.text = tempUser!.department
             usernameLabel?.text = tempUser!.username
             printers = myAppBundleHelper.getPrinterListByDepartment(Department.allDepartments[Department.getIndexOfRawvalue(tempUser!.department)])
             
             if printers.count != 0 {
                 printerDescriptionLabel.text = "A \(printers[0].type) printer located in \(printers[0].location) \n"
+            }
+            
+            if toPrintFile.fileType == .PNG || toPrintFile.fileType == .JPG {
+                fitOnePageSwitch.on = true
             }
             
         } else {
