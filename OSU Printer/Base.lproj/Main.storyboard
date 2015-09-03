@@ -408,7 +408,13 @@
                             <outlet property="delegate" destination="1eN-zT-W1p" id="uht-gB-Vwq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Printing History" id="Rye-CT-MCA"/>
+                    <navigationItem key="navigationItem" title="Printing History" id="Rye-CT-MCA">
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="gVV-vH-4ol">
+                            <connections>
+                                <action selector="clearButtonClicked:" destination="1eN-zT-W1p" id="zEw-yl-nl4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="oXz-Ai-64D">
                         <autoresizingMask key="autoresizingMask"/>
                         <attributedString key="attributedTitle">
@@ -798,8 +804,8 @@
         <image name="icon_settings" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1Cb-Lq-oLf"/>
         <segue reference="G8w-Ns-844"/>
+        <segue reference="iv4-ha-mIn"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

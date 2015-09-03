@@ -25,6 +25,12 @@ class HistoryTableViewController: UITableViewController {
     // number of sections, maybe I will support files in other format later and change this.
     let numberOfSections = 1
     
+    @IBAction func clearButtonClicked(sender: AnyObject) {
+        if data.count != 0 {
+            showClearAllAlert()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -123,6 +129,26 @@ class HistoryTableViewController: UITableViewController {
             }
         }
         return true
+    }
+    
+    func showClearAllAlert() {
+        let errorAlert = UIAlertController(
+            title: "Clear the history table?",
+            message: "",
+            preferredStyle: UIAlertControllerStyle.Alert
+        )
+        
+        errorAlert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler:
+            {
+                (alertAction: UIAlertAction!) -> Void in
+                self.myDBHelper.deleteAllPrintingHistory(self.data)
+                self.data.removeAll(keepCapacity: false)
+                self.tableView.reloadData()
+        }))
+        
+        errorAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        
+        self.presentViewController(errorAlert, animated: true, completion: nil)
     }
     
     func showFileNotExistsAlert(selectedIndex: NSIndexPath) {

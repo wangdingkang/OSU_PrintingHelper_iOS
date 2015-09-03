@@ -102,6 +102,16 @@ class DatabaseHelper{
         }
     }
     
+    func deleteAllPrintingHistory(willDeleteHistory: [NSManagedObject]) -> Void {
+        for record in willDeleteHistory {
+            context.deleteObject(record)
+        }
+        var error: NSError? = nil
+        if !context.save(&error) {
+            abort()
+        }
+    }
+    
     func deleteAnPrintingHistory(willDeleteHistory: NSManagedObject) -> Void {
         context.deleteObject(willDeleteHistory)
         var error: NSError? = nil

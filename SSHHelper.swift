@@ -19,9 +19,14 @@ class SSHHelper {
     var tempUser: TempUser?
     
     // try to connect to different servers in order to avoid frozen.
-    let hostnameForCSE = "gamma.cse.ohio-state.edu"
+    // beta, zeta, gamma, epsilon.cse.ohio-state.edu
+    var cseHostIndex = 0
     
-    let hostnameForECE = "rh026.ece.ohio-state.edu"
+    // rh001 - rh026.ece.ohio-state.edu
+    var eceHostIndex = 0
+    
+    // set connecti timeout to 3
+    let connectTimeOut = 2
     
     let serverTempFolderPath = "temp_print"
     
@@ -61,20 +66,30 @@ class SSHHelper {
     
     private func createANewSession(tempUser: TempUser, inout error: String?){
         var hostname: String?
+        var isCSEDepartment = true
+        
         switch tempUser.department {
         case Department.CSE.rawValue:
-            hostname = self.hostnameForCSE
+            hostname = CSEHost.allHosts[cseHostIndex].rawValue
         case Department.ECE.rawValue:
-            hostname = self.hostnameForECE
+            hostname = ECEHost.allHosts[eceHostIndex].rawValue
+            isCSEDepartment = false
         default:
             break
         }
+        
         if hostname != nil {
             tempSession = NMSSHSession(host: hostname, andUsername: tempUser.username)
             // set timeout to be 2 seconds
-            tempSession.connectWithTimeout(2)
+            
+            tempSession.connectWithTimeout(connectTimeOut)
             if !tempSession.connected {
-                error = "Connection error, please check you internet connection."
+                error = "Connection error, please check you internet connection and try again."
+                if isCSEDepartment {
+                    cseHostIndex = (cseHostIndex + 1) % CSEHost.allHosts.count
+                } else {
+                    eceHostIndex = (eceHostIndex + 1) % ECEHost.allHosts.count
+                }
             } else {
                 tempSession.authenticateByPassword(tempUser.password)
                 if !tempSession.authorized {
@@ -92,18 +107,17 @@ class SSHHelper {
     
     func testUsernameAndPassword(newUser: TempUser, inout error: String?) {
         dispatch_semaphore_wait(sshSemaphore, DISPATCH_TIME_FOREVER)
-        if !isTempSessionActive(newUser){
-            if tempSession != nil && tempSession.connected{
-                tempSession?.disconnect()
-            }
-            createANewSession(newUser, error: &error)
+        if tempSession != nil {
+            tempSession.disconnect()
         }
+        createANewSession(newUser, error: &error)
+
         dispatch_semaphore_signal(sshSemaphore)
     }
     
-    private func isTempSessionActive(newUser: TempUser) -> Bool {
-        return tempUser != nil && tempUser!.isEqual(newUser) && tempSession != nil && tempSession.authorized
-    }
+//    private func isTempSessionActive(newUser: TempUser) -> Bool {
+//        return tempUser != nil && tempUser!.isEqual(newUser) && tempSession != nil && tempSession.authorized
+//    }
     
     private func createFolderAndUploadFileToServer(foldername: String, filename: String, inout error: String?) {
         tempFTPConnection = NMSFTP(session: tempSession)
@@ -121,7 +135,7 @@ class SSHHelper {
         
         tempFTPConnection.disconnect()
         if !uploadOK {
-            error = "Some errors happen when uploading your file"
+            error = "Some errors happen when uploading your file, please try again."
         }
     }
     
@@ -166,33 +180,32 @@ class SSHHelper {
         dispatch_semaphore_signal(sshSemaphore)
     }
     
-    var printed = 0
-    
     private func executePrintDocs(filename: String, printingOption: PrintingOption, inout error: String?) {
-        if tempSession == nil || !tempSession.connected {
-            error = "Connection unexpectedly interrupted."
-            return
-        }
+        
         let cdInCommand = "cd temp_print; "
         let conversionCommand = "soffice --headless --convert-to pdf \"\(filename)\"; "
         let printCommand = getPrintCommand(printingOption, filename: filename.stringByDeletingPathExtension + ".pdf") + "; "
         let cdOutCommand = "cd ../"
         let command = cdInCommand + conversionCommand + printCommand + cdOutCommand
         
-        tempSession.channel.execute(cdInCommand + conversionCommand + printCommand + cdOutCommand, error: nil)
-        //print("\(command) \n")
+        var nserror: NSError? = nil
+        tempSession.channel.execute(cdInCommand + conversionCommand + printCommand + cdOutCommand, error: &nserror)
+        if nserror != nil {
+            error = "Some errors happen when executing commands, please try again."
+        }
+        print("\(command) \n")
     }
     
     private func executePrintDefault(filename: String, printingOption: PrintingOption, inout error: String?) {
-        if tempSession == nil || !tempSession.connected {
-            error = "Connection unexpectedly interrupted."
-            return
-        }
         
         let command = getPrintCommand(printingOption, filename: serverTempFolderPath.stringByAppendingPathComponent(filename))
         
-        tempSession.channel.execute(command, error: nil)
-        //print("\(command) \n")
+        var nserror: NSError? = nil
+        tempSession.channel.execute(command, error: &nserror)
+        if nserror != nil {
+            error = "Some errors happen when executing commands, please try again."
+        }
+        print("\(command) \n")
     }
     
     func removeFileAtPath(filename: String) {

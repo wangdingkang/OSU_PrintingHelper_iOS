@@ -43,15 +43,15 @@ class RootTabBarController: UITabBarController, UITabBarControllerDelegate {
     func tabBarController(tabBarController: UITabBarController, animationControllerForTransitionFromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         // implement the delegate function, return a transition animation object.
         if let controllers = tabBarController.viewControllers as? [UIViewController] {
-            let fromIndex = find(controllers, fromVC)
-            let toIndex = find(controllers, toVC)
+            let fromIndex = find(controllers, fromVC)!
+            let toIndex = find(controllers, toVC)!
             if fromIndex < toIndex {
-                return TransitionObjectForTabBar(moveRight: true)
+                return TransitionObjectForTabBar(moveRight: true, dist: abs(fromIndex - toIndex))
             } else {
-                return TransitionObjectForTabBar(moveRight: false)
+                return TransitionObjectForTabBar(moveRight: false, dist: abs(fromIndex - toIndex))
             }
         }
-        return TransitionObjectForTabBar(moveRight: true)
+        return TransitionObjectForTabBar(moveRight: true, dist: 1)
     }
 
 }

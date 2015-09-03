@@ -15,8 +15,11 @@ class TransitionObjectForTabBar: NSObject, UIViewControllerAnimatedTransitioning
     
     var moveRight: Bool
     
-    init(moveRight: Bool) {
+    var dist: CGFloat
+    
+    init(moveRight: Bool, dist: Int) {
         self.moveRight = moveRight
+        self.dist = CGFloat(dist)
         super.init()
     }
     
@@ -27,22 +30,23 @@ class TransitionObjectForTabBar: NSObject, UIViewControllerAnimatedTransitioning
         
         transitionContext.containerView().addSubview(fromView)
         transitionContext.containerView().addSubview(toView)
+        transitionContext.containerView().backgroundColor = UIColor.whiteColor()
         
         //Slide in slide out effect.
         if moveRight {
-            toView.frame = CGRectMake(toView.frame.width, 0, toView.frame.width, toView.frame.height)
+            toView.frame = CGRectMake(dist * toView.frame.width, 0, toView.frame.width, toView.frame.height)
             UIView.animateWithDuration(transitionDuration(transitionContext), animations: { () -> Void in
                 toView.frame = CGRectMake(0, 0, toView.frame.width, toView.frame.height)
-                fromView.frame = CGRectMake(-fromView.frame.width, 0, fromView.frame.width, fromView.frame.height)
+                fromView.frame = CGRectMake(-self.dist * fromView.frame.width, 0, fromView.frame.width, fromView.frame.height)
                 }) { (Bool) -> Void in
                     // update internal view - must always be called
                     transitionContext.completeTransition(true)
             }
         } else {
-            toView.frame = CGRectMake(toView.frame.width, 0, -toView.frame.width, toView.frame.height)
+            toView.frame = CGRectMake(-dist * toView.frame.width, 0, toView.frame.width, toView.frame.height)
             UIView.animateWithDuration(transitionDuration(transitionContext), animations: { () -> Void in
                 toView.frame = CGRectMake(0, 0, toView.frame.width, toView.frame.height)
-                fromView.frame = CGRectMake(fromView.frame.width, 0, fromView.frame.width, fromView.frame.height)
+                fromView.frame = CGRectMake(self.dist * fromView.frame.width, 0, fromView.frame.width, fromView.frame.height)
                 }) { (Bool) -> Void in
                     // update internal view - must always be called
                     transitionContext.completeTransition(true)
