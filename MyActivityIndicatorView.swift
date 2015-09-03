@@ -31,7 +31,7 @@ class MyActivityIndicatorView: UIView {
         super.init(frame: frame)
         
         self.backgroundColor = UIColor.lightGrayColor()
-        self.alpha = 0.7
+        self.alpha = 0.9
         self.layer.cornerRadius = 15
         
         self.addSubview(activityIndicator)
